@@ -1,18 +1,9 @@
-import OpenAI from 'openai';
-import {
-  assign,
-  createActor,
-  fromCallback,
-  fromPromise,
-  log,
-  setup,
-} from 'xstate';
-import { createAgent } from '../src';
-import { loadingAnimation } from './helpers/loader';
+import {ChatOpenAI} from "@langchain/openai";
+import {assign, createActor, fromCallback, fromPromise, log, setup,} from 'xstate';
+import {createAgent} from '../src';
+import {loadingAnimation} from './helpers/loader';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const openai = new ChatOpenAI();
 
 const agent = createAgent(openai, {
   model: 'gpt-3.5-turbo-1106',
@@ -39,7 +30,7 @@ const rateJoke = agent.fromChatCompletion(
 );
 
 const getTopic = fromPromise(async () => {
-  const topic = await new Promise<string>((res) => {
+  return await new Promise<string>((res) => {
     console.log('Give me a joke topic:');
     const listener = (data: Buffer) => {
       const result = data.toString().trim();
@@ -48,8 +39,6 @@ const getTopic = fromPromise(async () => {
     };
     process.stdin.on('data', listener);
   });
-
-  return topic;
 });
 
 const decide = agent.fromEvent(
@@ -94,15 +83,15 @@ const loader = fromCallback(({ input }: { input: string }) => {
     anim.stop();
   };
 });
-
+declare type JokeMachineContext =  {
+  topic: string;
+  jokes: string[];
+  desire: string | null;
+  lastRating: string | null;
+}
 const jokeMachine = setup({
   types: {
-    context: {} as {
-      topic: string;
-      jokes: string[];
-      desire: string | null;
-      lastRating: string | null;
-    },
+    context: {} as JokeMachineContext,
     input: {} as { topic: string },
   },
   actors: {
@@ -137,7 +126,7 @@ const jokeMachine = setup({
       invoke: [
         {
           src: 'getJokeCompletion',
-          input: ({ context }) => context.topic,
+          input: ({context}:{ context:JokeMachineContext }) => context.topic,
           onDone: {
             actions: [
               assign({
@@ -161,7 +150,7 @@ const jokeMachine = setup({
       invoke: [
         {
           src: 'rateJoke',
-          input: ({ context }) => context.jokes[context.jokes.length - 1]!,
+          input: ({context}:{ context:JokeMachineContext }) => context.jokes[context.jokes.length - 1]!,
           onDone: {
             actions: [
               assign({
@@ -182,7 +171,7 @@ const jokeMachine = setup({
     decide: {
       invoke: {
         src: 'decide',
-        input: ({ context }) => context.lastRating!,
+        input: ({context}:{ context:JokeMachineContext }) => context.lastRating!,
         onDone: {
           actions: log(({ event }) => event),
         },
@@ -209,6 +198,7 @@ const jokeMachine = setup({
     process.exit();
   },
 });
+// declare type JokeMachineContext = ContextFrom<typeof jokeMachine>;
 
 const actor = createActor(jokeMachine);
 actor.start();

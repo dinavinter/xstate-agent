@@ -1,39 +1,42 @@
-import type OpenAI from 'openai';
+import {ChatOpenAI, OpenAIClient as OpenAI} from '@langchain/openai';
 import {
-  AnyEventObject,
-  ObservableActorLogic,
-  Observer,
-  PromiseActorLogic,
-  Values,
-  fromObservable,
-  fromPromise,
-  setup,
-  toObserver,
+    type AnyEventObject,
+    fromObservable,
+    fromPromise,
+    toObserver,
+    type ObservableActorLogic,
+    type Observer,
+    type PromiseActorLogic,
+    type Values,
 } from 'xstate';
-import { getAllTransitions } from './utils';
 import {
-  ContextSchema,
-  EventSchemas,
-  ConvertContextToJSONSchema,
-  ConvertToJSONSchemas,
-  createEventSchemas,
+    ContextSchema,
+    ConvertContextToJSONSchema,
+    ConvertToJSONSchemas,
+    createEventSchemas,
+    EventSchemas,
+    getAllTransitions
 } from './utils';
-import { FromSchema } from 'json-schema-to-ts';
-import { ChatCompletionCreateParamsNonStreaming } from 'openai/resources';
-import {
-  ChatCompletionCreateParamsBase,
-  ChatCompletionCreateParamsStreaming,
-} from 'openai/resources/chat/completions';
+import {FromSchema} from 'json-schema-to-ts';
+import {CreateOpenAIToolsAgentParams} from "langchain/agents";
+import {RunnableLambda, RunnablePassthrough, RunnableSequence} from "@langchain/core/runnables";
+import {JsonOutputToolsParser} from "langchain/output_parsers";
+import type {BaseLanguageModelInput} from "@langchain/core/language_models/base";
+type ChatCompletionCreateParamsNonStreaming  = OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming;
+type ChatCompletionCreateParamsBase = OpenAI.Chat.Completions.ChatCompletionCreateParams;
+type ChatCompletionCreateParamsStreaming = OpenAI.Chat.Completions.ChatCompletionCreateParamsStreaming;
+
 
 /**
  * Creates [promise actor logic](https://stately.ai/docs/promise-actors) that uses the OpenAI API to generate a completion.
  *
  * @param openai The OpenAI instance.
+ * @param agentSettings
  * @param inputFn A function that maps arbitrary input to OpenAI chat completion input.
  *
  */
 export function fromChatCompletion<TInput>(
-  openai: OpenAI,
+  openai: ChatOpenAI,
   agentSettings: CreateAgentOutput<any>,
   inputFn: (
     input: TInput
@@ -54,9 +57,7 @@ export function fromChatCompletion<TInput>(
               ],
             }
           : openAiInput;
-      const response = await openai.chat.completions.create(params);
-
-      return response;
+        return await openai.completionWithRetry(params);
     }
   );
 }
@@ -65,10 +66,11 @@ export function fromChatCompletion<TInput>(
  * Creates [observable actor logic](https://stately.ai/docs/observable-actors) that uses the OpenAI API to generate a completion stream.
  *
  * @param openai The OpenAI instance to use.
+ * @param agentSettings
  * @param inputFn A function that maps arbitrary input to OpenAI chat completion input.
  */
 export function fromChatCompletionStream<TInput>(
-  openai: OpenAI,
+  openai: ChatOpenAI,
   agentSettings: CreateAgentOutput<any>,
   inputFn: (
     input: TInput
@@ -90,11 +92,12 @@ export function fromChatCompletionStream<TInput>(
                     content: openAiInput,
                   },
                 ],
+               stream: true
               }
             : openAiInput;
-        const stream = await openai.chat.completions.create({
-          ...resolvedParams,
-          stream: true,
+        const stream = await openai.completionWithRetry({
+          ...resolvedParams , 
+            stream: true
         });
 
         for await (const part of stream) {
@@ -124,14 +127,16 @@ export function fromChatCompletionStream<TInput>(
  * Creates [promise actor logic](https://stately.ai/docs/promise-actors) that passes the next possible transitions as functions to [OpenAI tool calls](https://platform.openai.com/docs/guides/function-calling) and returns an array of potential next events.
  *
  * @param openai The OpenAI instance to use.
+ * @param agentSettings
  * @param inputFn A function that maps arbitrary input to OpenAI chat completion input.
+ * @param options
  */
 export function fromEventChoice<TInput>(
-  openai: OpenAI,
+  openai: CreateOpenAIToolsAgentParams["llm"],
   agentSettings: CreateAgentOutput<any>,
   inputFn: (
     input: TInput
-  ) => string | OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming,
+  ) => BaseLanguageModelInput,
   options?: {
     /**
      * Immediately execute sending the event to the parent actor.
@@ -140,75 +145,76 @@ export function fromEventChoice<TInput>(
     execute?: boolean;
   }
 ) {
-  return fromPromise<AnyEventObject[] | undefined, TInput>(
-    async ({ input, self, system }) => {
-      const transitions = getAllTransitions(self._parent!.getSnapshot());
-      const functionNameMapping: Record<string, string> = {};
-      const tools = transitions
-        .filter((t) => {
-          return !t.eventType.startsWith('xstate.');
-        })
-        .map((t) => {
-          const name = t.eventType.replace(/\./g, '_');
-          functionNameMapping[name] = t.eventType;
-          return {
-            type: 'function',
-            function: {
-              name,
-              description:
-                t.description ??
-                agentSettings.schemas.events[t.eventType]?.description,
-              parameters: {
-                type: 'object',
-                properties:
-                  agentSettings.schemas.events[t.eventType]?.properties ?? {},
-              },
-            },
-          } as const;
-        });
+    return fromPromise<AnyEventObject[] | undefined, TInput>(
+        async ({input, self, system}) => {
+            const transitions = getAllTransitions(self._parent!.getSnapshot());
+            const functionNameMapping: Record<string, string> = {};
+            const functions:OpenAI.ChatCompletionTool[] = transitions
+                .filter((t) => {
+                    return !t.eventType.startsWith('xstate.');
+                })
+                .map((t) => {
+                    const name = t.eventType.replace(/\./g, '_');
+                    functionNameMapping[name] = t.eventType;
+                    return {
+                        type: 'function', 
+                         function: { 
+                            name,
+                            description:
+                                t.description ??
+                                agentSettings.schemas.events[t.eventType]?.description,
+                            parameters: {
+                                type: 'object',
+                                properties:
+                                    agentSettings.schemas.events[t.eventType]?.properties ?? {},
+                            },
+                        },
+                    }  ;
+                });
+ 
+            const openAiInput = inputFn(input);
 
-      const openAiInput = inputFn(input);
-      const completionParams: ChatCompletionCreateParamsNonStreaming =
-        typeof openAiInput === 'string'
-          ? {
-              model: agentSettings.model,
-              messages: [
-                {
-                  role: 'user',
-                  content: openAiInput,
-                },
-              ],
-            }
-          : openAiInput;
-      const completion = await openai.chat.completions.create({
-        ...completionParams,
-        tools,
-      });
+            const callSelectedTool = RunnableLambda.from(
+                (toolInvocation: Record<string, any>) => { 
+                      const toolCallChain = RunnableSequence.from([
+                        (toolInvocation) => toolInvocation.args,
+                         new RunnableLambda({
+                             func: async (args) => {
+                                 if(options?.execute) {
+                                     // @ts-ignore
+                                     system._relay(self, self._parent, {
+                                         type: functionNameMapping[toolInvocation.type],
+                                         ...args,
+                                     })
+                                 }
+                             }
+                         })
+                    ]);
+                    // We use `RunnablePassthrough.assign` here to return the intermediate `toolInvocation` params
+                    // as well, but you can omit if you only care about the answer.
+                    return RunnablePassthrough.assign({
+                        output: toolCallChain,
+                    });
+                }
+            );
+            const modelWithTools =  openai.bind({tools: functions} )
 
-      const toolCalls = completion.choices[0]?.message.tool_calls;
+            const chain = RunnableSequence.from([
+                modelWithTools,
+                new JsonOutputToolsParser(),
+                // .map() allows us to apply a function for each item in a list of inputs.
+                // Required because the model can call multiple tools at once.
+                callSelectedTool.map(),
+                new JsonOutputToolsParser()
+            ]);
 
-      if (toolCalls) {
-        const events = toolCalls.map((tc) => {
-          return {
-            type: functionNameMapping[tc.function.name],
-            ...JSON.parse(tc.function.arguments),
-          };
-        });
-
-        if (options?.execute) {
-          events.forEach((event) => {
-            // @ts-ignore
-            system._relay(self, self._parent, event);
-          });
+ 
+            return  await chain.invoke(openAiInput);
         }
-      }
-
-      return undefined;
-    }
-  );
+    );
 }
 
-interface CreateAgentOutput<
+export interface CreateAgentOutput<
   T extends {
     model: ChatCompletionCreateParamsBase['model'];
     context: ContextSchema;
@@ -250,7 +256,7 @@ export function createAgent<
     context: ContextSchema;
     events: EventSchemas;
   }
->(openai: OpenAI, settings: T): CreateAgentOutput<T> {
+>(openai: ChatOpenAI, settings: T): CreateAgentOutput<T> {
   const agentSettings: CreateAgentOutput<T> = {
     model: settings.model,
     schemas: {
@@ -275,3 +281,4 @@ export function createAgent<
 
   return agentSettings as any;
 }
+ 
