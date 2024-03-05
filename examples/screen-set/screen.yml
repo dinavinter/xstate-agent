@@ -1,0 +1,398 @@
+elements:
+  - name: gigya-screen-set
+    class: gigya-screen-set
+    tag: div
+    description: A collection of user interaction screens within a div element.
+    classes:
+      gigya-calculate-size: CSS class to apply to the screen-set for responsive design.
+      gigya-screen-dialog: CSS class that is applied to the screen-set when presented
+        in a dialog.
+      gigya-screen-dialog-mobile: CSS class that is applied to the screen-set when presented
+        in a dialog on mobile devices.
+      gigya-hidden: CSS class that is applied to to the screen-set when hidden.
+    properties:
+      id:
+        type: string
+        description: A unique identifier for the screen-set.
+        category: structure
+      data-responsive:
+        type: boolean
+        description: Enables responsive design for the screen-set.
+        category: ui
+      data-width:
+        type: number
+        description: Defines the width of the screen-set when presented in a dialog.
+        category: ui
+      data-height:
+        type: number
+        description: Defines the height of the screen-set when presented in a dialog.
+        category: ui
+      data-start-screen:
+        type: string
+        description: Specifies the initial screen to display within the screen-set.
+        category: navigation
+      data-dialog-style:
+        type: string
+        description: Style of the dialog when the screen-set is presented in a dialog.
+        category: ui
+        enum:
+          - none
+          - classic
+          - modern
+          - legacy
+  - name: gigya-screen
+    description: Individual screens encapsulated within a div element, part of a gigya-screen-set.
+    class: gigya-screen
+    tag: div
+    classes:
+      gigya-hidden: CSS class that is applied to the screen when hidden.
+    properties:
+      id:
+        type: string
+        description: A unique identifier for the screen.
+      data-width:
+        type: number
+        description: Defines the width of the screen.
+      data-height:
+        type: number
+        description: Defines the height of the screen.
+      data-caption:
+        type: string
+        description: Caption of the screen.
+      data-next-screen:
+        type: string
+        description: Specifies the next screen to display upon completion of the current
+          screen.
+      data-on-accounts-linked-screen:
+        type: string
+        description: Specifies the screen to display upon completion of account linking.
+      data-on-pending-tfa-registration-screen:
+        type: string
+        description: Specifies the screen to display when a pending TFA registration
+          is triggered during registration or login.
+      data-on-pending-registration-screen:
+        type: string
+        description: Specifies the screen to display when a pending registration is
+          triggered during registration or login.
+      data-on-existing-login-identifier-screen:
+        type: string
+        description: Specifies the screen to display when a conflicting login identifier
+          is detected during social login.
+      data-on-pending-verification-screen:
+        type: string
+        description: Specifies the screen to display when a pending verification is
+          triggered during registration or login.
+      data-on-pending-tfa-verification-screen:
+        type: string
+        description: Specifies the screen to display when a pending TFA is triggered
+          during registration or login.
+      data-on-pending-email-verification-code:
+        type: string
+        description: Specifies the screen to display when a  code is sent to the user's
+          email for verification.
+      data-on-missing-loginid-screen:
+        type: string
+        description: Specifies the screen to display when a password required during
+          password-less registration ( social login, otp ,fido, etc).
+      data-on-pending-password-change-screen:
+        type: string
+        description: Specifies the screen to display when a pending password change
+          is triggered.
+      data-on-pending-recent-login-screen:
+        type: string
+        description: Specifies the screen to display when a pending recent login is
+          triggered.
+    patternProperties:
+      data-on-.*-screen:
+        type: string
+        description: Specifies the screen to display upon completion of a specific event.
+      gigya-conditional:.*:
+        "$anchor": gigya-conditional
+        "$comment": gigya-conditional:<attributeName>="<js_condition>?<true_value>:<false_value>
+        description: A conditional attribute for setting how screens appear on various
+          screen sizes.
+        type: string
+        format: expression
+        pattern: '[a-zA-Z0-9]+="[a-zA-Z0-9]+[<>=!]+[a-zA-Z0-9]+\?[a-zA-Z0-9]+:[a-zA-Z0-9]+"'
+        examples:
+          - gigya-conditional:class="screenset.width<500?narrow:wide"
+          - gigya-conditional:readonly="screenset.width<500?:readonly"
+        properties:
+          condition:
+            type: string
+            format: condition
+            expression:
+              type: string
+              description: The input for the conditional attribute.
+              enum:
+                - screenset.width
+                - screenset.height
+                - viewport.height
+                - viewport.width
+                - viewport.orientation
+              enumDescriptions:
+                - Plugin computed width.
+                - Plugin computed height.
+                - Screen computed height.
+                - Screen computed width.
+                - Screen orientation in degrees.
+            operator:
+              type: string
+              description: The operator to use for the conditional attribute.
+            value:
+              type:
+                - string
+                - number
+              description: The value to compare against.
+          true_value:
+            type: string
+            description: The operator to use for the conditional attribute.
+          false_value:
+            oneOf:
+              - type:
+                  - string
+                  - number
+                description: The value to use if the condition is false.
+              - type: 'null'
+                description: If the condition is false, the attribute will be reverted
+                  to it's initial or deleted if no initial value.
+                examples:
+                  - gigya-conditional:readonly="screenset.width<500?:readonly"
+                  - class="initial" gigya-conditional:class="screenset.width<500?narrow:"
+              - $dynamicRef: gigya-conditional
+                description: A nested conditional attribute.
+                examples:
+                  - gigya-conditional:class="screenset.width<500?narrow:gigya-conditional:viewport.width<500?narrow:wide"
+  
+ 
+  - name: form
+    description: Utilizes form tags for functionality of updating profile fields, the screen behavior is set by the form name (defined in class attribute).
+    tag: form 
+    properties:
+      id:
+        type: string
+        description: The form's unique identifier. If not specified, then the ID of the form is its class name.
+      data-on-success-screen:
+        type: string
+        description: Defines which screen to switch in case of successful submission and processing of the form. If not specified, after successful processing of the form, the flow finishes and SAP Customer Data Cloud hides the screen-set (see also Removing the Screen-Set section).
+      data-auto-skip:
+        type: boolean
+        description: A boolean attribute with a default value "false". When the value is set to "true" and all the required fields in the form have data (from the database), the form is automatically skipped and behaves as if it was successfully submitted and processed. SAP Customer Data Cloud loads the data-on-success-screen if defined, or finishes the flow and hides the screen-set. The data-auto-skip logic also takes into consideration the data-empty-fields settings, so a screen may not be skipped if it has a container that has missing required fields and passes all other defined conditions (so the container is visible).
+      data-on-auto-skip-screen:
+        type: string
+        description: When specified, this attribute overrides the data-on-success next screen attribute and allows specifying a different next screen when the form is successfully submitted vs. when the screen is auto-skipped. If this attribute is not specified, then the next screen for both cases is determined by the data-on-success attribute.
+      data-on-screenset-skipped-screen:
+        type: string
+        description: Indicates the next screen to display when a screen in a different screen-set was skipped, returning control to the current screen-set.
+    classes:
+      gigya-form-error: a CSS class that is applied to the form when an error occurs.
+    forms:
+      gigya-register-form: 
+        description: Represents a registration with a password form, where the user is expected to specify his credentials and potentially additional information.
+        tag: form
+        properties:
+          loginID:
+            type: string
+            description: The user's login identifier.
+          password:
+            type: string
+            description: The user's password.
+          passwordRetype:
+            type: string
+            description: The user's password, re-typed.
+      gigya-login-form:
+        description: Represents a login form, where the user is expected to enter his credentials for identification.
+        tag: form
+        properties:
+          loginID:
+            type: string
+            description: The user's login identifier.
+          password:
+            type: string
+            description: The user's password.
+          captchaText:
+            type: string
+            description: The user's CAPTCHA text.
+          remember:
+            type: boolean
+            description: Whether the user checked the "Remember me" checkbox.
+      gigya-reauthentication-form:
+        description: Represents an account authentication form, where the user is expected to prove ownership of an account by logging in.
+        tag: form
+        properties:
+          loginID:
+            type: string
+            description: The user's login identifier.
+          availableProviders:
+            type: string
+            description: The user's available providers.
+      gigya-passwordless-login-form:
+        description: Represents a passwordless login form, where the user is expected to enter his credentials for identification.
+        tag: form
+        properties:
+          identifier:
+            selector: input[data-identifier-type]
+            description: The user's identifier.
+            properties:
+              data-identifier-type:
+                type: string
+                description: The user's identifier type.
+            
+      gigya-change-email-screen:
+        description: Represents an email change form, where the user is expected to update his email address.
+        tag: form
+        properties:
+          email:
+            type: string
+            description: The user's new email address.
+        
+        
+      gigya-auth-methods-screen:
+        context: 
+          description: The available data attributes for data-condition properties
+          authMethods:
+            type: array
+            description: The user's available authentication methods.
+            items:
+              type: string
+              description: The user's available authentication method.
+              enum:
+                - passkeyLogin
+                - passkeyRegister
+                - password
+                - push
+                - emailOtp
+                - magicLink
+      gigya-push-auth-method-form:
+        description: Represents a push authentication method form, where the user is expected to approve a push notification for authentication.
+        tag: form
+        properties:
+          pushAuth:
+            type: string
+            description: The user's push authentication.
+      gigya-otp-send-code-form:
+        description: Represents a form where the user is expected to enter his phone number for verification.
+        tag: form
+        defaultScreen: Default-RegistrationLogin/gigya-mobile-login-screen
+        behavior: [send-code]
+        properties:
+         phoneNumber:
+            type: string
+            description: The user's phone number.
+         email:
+            type: string
+            description: The user's email address
+      gigya-otp-login-form:
+        description: Represents a form where the user is expected to enter the code sent to his phone for verification.
+        tag: form
+        defaultScreen: Default-RegistrationLogin/gigya-otp-login-form
+        behavior: [login, registration]
+        properties:
+          code:
+            type: string
+            description: The user's verification code.
+      gigya-mobile-verification-screen:
+        description: Represents a form where the user is expected to enter the code sent to his phone for verification.
+        tag: form
+        defaultScreen: Default-RegistrationLogin/gigya-mobile-verification-screen
+        code:
+          type: string
+          description: The user's verification code.
+      gigya-otp-update-form:
+        description: Represents a form where the user is expected to enter the code sent to his email for verification of a new email.
+        tag: form
+        defaultScreen: Default-RegistrationLogin/gigya-email-code-verification-screen
+        behavior: [update]
+        properties:
+          code:
+            type: string
+            description: The user's verification code.
+  - name: field
+    tag: input
+    classes:
+      gigya-hidden: CSS class that is applied to the field when hidden.
+      gigya-required-display: TBD
+    properties:
+      data-required:
+        type: boolean
+        description: When the value is set to "true", the field is required and must be filled in by the user. even if the field is not defined as required in the schema.
+      show-valid-checkmark:
+        type: boolean
+        description: When the value is set to "true", a checkmark is displayed next to the field when the field is valid.
+  - name: widget
+    description: Specialized components offering extended functionalities.
+    classes:
+      
+      gigya-social-login: 
+        description: A wrapper around SAP Customer Data Cloud's Login plugin.
+        tag: div
+        properties:
+          buttonsStyle:
+            type: string
+            description: Style of the buttons.
+          width:
+            type: string
+            description: Width of the plugin.
+          showTermsLink:
+            type: boolean
+            description: Whether to show the terms link.
+      gigya-captcha:
+        description: A CAPTCHA component using Google's reCAPTCHA. 
+        tag: div
+        properties:
+          lang:
+            type: string
+            description: Language of the CAPTCHA.
+          theme:
+            type: string
+            description: Theme of the CAPTCHA.
+          data-badge:
+            type: string
+            description: Position of the Invisible reCAPTCHA badge.
+          data-type:
+            type: string
+            description: Type of reCAPTCHA challenge.
+      gigya-password-strength:
+        description: Provides an indication of password strength.
+        tag: div
+        properties:
+          data-on-focus-bubble:
+            type: boolean
+            description: Display the widget in a floating bubble on focus.
+          data-display-mode:
+            type: string
+            description: Mode of display (meter, policy, combined).
+          data-bubble-orientation:
+            type: string
+            description: Orientation of the bubble (right, left, up, down).
+      gigya-error-display:
+        description: Indicates an element bound to an error state of a form or field.
+        tag: div
+        properties:
+          data-bound-to:
+            type: string
+            description: Indicates the object to which this error object is bound.
+          data-scope:
+            type: string
+            description: Indicates the scope of this error object.
+          data-error-codes:
+            type: string
+            description: List of error codes for which the error object will be displayed.
+      gigya-error-msg:
+        description: Container for automatically generated with an error message upon screen error.
+        tag: span
+        properties:
+          data-scope:
+            type: string
+            description: Indicates the scope of this error object.
+          data-error-codes:
+            type: string
+            description: List of error codes for which the error container will be displayed.
+    
+
+  - name: interaction
+    tag: input
+    properties:
+      data-switch-screen:
+        type: string
+        description: Specifies the screen to switch to upon interaction.

@@ -1,0 +1,166 @@
+gigya-passwordless-login-form:
+  description: Represents a passwordless login form, where the user is expected to enter his credentials for identification.
+  tag: form
+  properties:
+    identifier:
+      selector: input[data-identifier-type]
+      description: The user's identifier.
+      properties:
+        data-identifier-type:
+          type: string
+          description: The user's identifier type.
+
+gigya-update-profile-form:
+  description: Represents a profile update form, where the user is expected to update his profile fields.
+  tag: form
+  properties:
+    firstName:
+      type: string
+      description: The user's first name.
+    lastName:
+      type: string
+      description: The user's last name.
+gigya-verify-email-form:
+  description: Represents a form for verifying email, where the user is expected to enter the verification code sent to his email.
+  tag: form
+  properties:
+    verificationCode:
+      type: string
+      description: The user's verification code.
+gigya-change-password-form:
+  description: Represents a form for changing password, where the user is expected to enter his old and new passwords.
+  tag: form
+  properties:
+    oldPassword:
+      type: string
+      description: The user's old password.
+    newPassword:
+      type: string
+      description: The user's new password.
+    confirmPassword:
+      type: string
+      description: The user's new password, re-typed.
+gigya-link-account-form:
+  description: Represents a form for linking accounts, where the user is expected to enter his credentials to link his account with another account.
+  tag: form
+  properties:
+    loginID:
+      type: string
+      description: The user's login identifier.
+    password:
+      type: string
+      description: The user's password.
+  
+gigya-passwordless-login-form:
+  description: Represents a passwordless login form, where the user is expected to enter his login identifier for identification.
+  tag: form
+  properties:
+    loginID:
+      type: string
+      description: The user's login identifier.
+gigya-reset-password-form:
+  description: Represents a password reset form, where the user is expected to enter his login identifier for identification and a new password.
+  tag: form
+  properties:
+    loginID:
+      type: string
+      description: The user's login identifier.
+    password:
+      type: string
+      description: The user's password.
+gigya-change-password-form:
+  description: Represents a password change form, where the user is expected to enter his current password and a new password.
+  tag: form
+  properties:
+    password:
+      type: string
+      description: The user's password.
+    newPassword:
+      type: string
+      description: The user's new password.
+    newPasswordRetype:
+      type: string
+      description: The user's new password, re-typed.
+
+gigya-update-email-form:
+  description: Represents an email update form, where the user is expected to update his email address.
+  tag: form
+  properties:
+    newEmail:
+      type: string
+      description: The user's new email address.
+
+gigya-update-phone-form:
+  description: Represents a phone number update form, where the user is expected to update his phone number.
+  tag: form
+  properties:
+    newPhone:
+      type: string
+      description: The user's new phone number.
+ 
+  
+gigya-otp-update-form:
+  description: Represents a form where the user is expected to enter the code sent to his email for verification.
+  tag: form
+  properties:
+    code:
+      type: string
+      description: The user's email verification code.
+gigya-email-form:
+  description: Represents a form where the user is expected to enter his email for registration.
+  tag: form
+  properties:
+    email:
+      type: string
+      description: The user's email.
+gigya-forgot-password-form:
+  description: Represents a form where the user is expected to enter his email for password recovery.
+  tag: form
+  properties:
+    email:
+      type: string
+      description: The user's email.
+gigya-reset-password-form:
+  description: Represents a form where the user is expected to enter his new password.
+  tag: form
+  properties:
+    newPassword:
+      type: string
+      description: The user's new password.
+    newPasswordRetype:
+      type: string
+      description: The user's new password, re-typed.
+gigya-update-profile-form:
+  description: Represents a form where the user is expected to update his profile.
+  tag: form
+  properties:
+    email:
+      type: string
+      description: The user's email.
+    firstName:
+      type: string
+      description: The user's first name.
+    lastName:
+      type: string
+      description: The user's last name.
+    birthDay:
+      type: string
+      description: The user's birth day.
+    birthMonth:
+      type: string
+      description: The user's birth month.
+    birthYear:
+      type: string
+      description: The user's birth year.
+gigya-verify-account-form:
+  description: Represents a form where the user is expected to enter his email for account verification.
+  tag: form
+  properties:
+    email:
+      type: string
+      description: The user's email.
+gigya-add-connection-form:
+  description: Represents a form where the user is expected to add a social connection.
+  tag: form
+  properties:
+    provider:

@@ -1,0 +1,286 @@
+{
+  "elements": [
+    {
+      "name": "gigya-screen-set",
+      "class": "gigya-screen-set",
+      "tag": "div", 
+      "description": "A collection of user interaction screens within a div element.",
+      "classes": {
+         "gigya-calculate-size": "CSS class to apply to the screen-set for responsive design.",
+        "gigya-screen-dialog": "CSS class that is applied to the screen-set when presented in a dialog.",
+        "gigya-screen-dialog-mobile": "CSS class that is applied to the screen-set when presented in a dialog on mobile devices.",
+        "gigya-hidden": "CSS class that is applied to to the screen-set when hidden."
+       },
+      "properties": { 
+        "id":{
+            "type": "string",
+            "description": "A unique identifier for the screen-set.",
+            "category": "structure"
+        },
+        "data-responsive":{
+            "type": "boolean",
+            "description": "Enables responsive design for the screen-set.",
+           "category": "ui"
+            },
+        "data-width":{
+            "type": "number",
+            "description": "Defines the width of the screen-set when presented in a dialog.",
+            "category": "ui"
+            },
+         "data-height":{
+            "type": "number",
+            "description": "Defines the height of the screen-set when presented in a dialog.",
+             "category": "ui"
+          },
+          "data-start-screen":{
+            "type": "string",
+            "description": "Specifies the initial screen to display within the screen-set.",
+            "category": "navigation"
+            
+           },
+        "data-dialog-style":{
+            "type": "string",
+            "description": "Style of the dialog when the screen-set is presented in a dialog.",
+            "category": "ui",
+            "enum": ["none", "classic", "modern", "legacy"]
+          }
+      } 
+    },
+    {
+      "name": "gigya-screen",
+      "description": "Individual screens encapsulated within a div element, part of a gigya-screen-set.",
+      "class": "gigya-screen",
+      "tag": "div",
+      "classes": {
+        "gigya-hidden": "CSS class that is applied to the screen when hidden."
+      },
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the screen."
+        },
+        "data-width": {
+          "type": "number",
+          "description": "Defines the width of the screen."
+        },
+        "data-height": {
+          "type": "number",
+          "description": "Defines the height of the screen."
+        },
+        "data-caption": {
+          "type": "string",
+          "description": "Caption of the screen."
+        },
+        "data-next-screen": {
+          "type": "string",
+          "description": "Specifies the next screen to display upon completion of the current screen."
+        },
+        "data-on-accounts-linked-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display upon completion of account linking."
+        },
+        "data-on-pending-tfa-registration-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending TFA registration is triggered during registration or login."
+        },
+        "data-on-pending-registration-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending registration is triggered during registration or login."
+        },
+        "data-on-existing-login-identifier-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a conflicting login identifier is detected during social login."
+        },
+        "data-on-pending-verification-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending verification is triggered during registration or login."
+        },
+        "data-on-pending-tfa-verification-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending TFA is triggered during registration or login."
+        },
+        "data-on-pending-email-verification-code": {
+          "type": "string",
+          "description": "Specifies the screen to display when a  code is sent to the user's email for verification."
+        },
+        "data-on-missing-loginid-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a password required during password-less registration ( social login, otp ,fido, etc)."
+        },
+        "data-on-pending-password-change-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending password change is triggered."
+        },
+        "data-on-pending-recent-login-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending recent login is triggered."
+        }
+      },
+      "patternProperties": {
+        "data-on-.*-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display upon completion of a specific event."
+        },
+        "gigya-conditional:.*": {
+          "$anchor": "gigya-conditional",
+          "$comment":"gigya-conditional:<attributeName>=\"<js_condition>?<true_value>:<false_value>",
+          "description": "A conditional attribute for setting how screens appear on various screen sizes.",
+          "type": "string",
+          "format": "expression",
+          "pattern": "[a-zA-Z0-9]+=\"[a-zA-Z0-9]+[<>=!]+[a-zA-Z0-9]+\\?[a-zA-Z0-9]+:[a-zA-Z0-9]+\"",
+          "examples": [
+              "gigya-conditional:class=\"screenset.width<500?narrow:wide\"",
+              "gigya-conditional:readonly=\"screenset.width<500?:readonly\""
+          ],  
+          "properties": {
+            "condition": {
+              "type": "string",
+              "format": "condition",
+              "expression": {
+                "type": "string",
+                "description": "The input for the conditional attribute.",
+                "enum": [
+                  "screenset.width",
+                  "screenset.height",
+                  "viewport.height",
+                  "viewport.width",
+                  "viewport.orientation"
+                ],
+                "enumDescriptions": [
+                  "Plugin computed width.",
+                  "Plugin computed height.",
+                  "Screen computed height.",
+                  "Screen computed width.",
+                  "Screen orientation in degrees."
+                ]
+              },
+              "operator": {
+                "type": "string",
+                "description": "The operator to use for the conditional attribute."
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "number"
+                ],
+                "description": "The value to compare against."
+              }
+            },
+            "true_value": {
+              "type": "string",
+              "description": "The operator to use for the conditional attribute."
+            },
+            "false_value":{
+              "oneOf": [
+                {
+                  "type": ["string", "number"],
+                  "description": "The value to use if the condition is false."
+                }, 
+                {
+                  "type": "null",
+                  "description": "If the condition is false, the attribute will be reverted to it's initial or deleted if no initial value.",
+                  "examples": [
+                    "gigya-conditional:readonly=\"screenset.width<500?:readonly\"",
+                    "class=\"initial\" gigya-conditional:class=\"screenset.width<500?narrow:\""
+                    
+                  ]
+                },
+                {
+                  "$dynamicRef": "gigya-conditional",
+                  "description": "A nested conditional attribute.",
+                  "examples": ["gigya-conditional:class=\"screenset.width<500?narrow:gigya-conditional:viewport.width<500?narrow:wide\""]
+                }
+              ]
+            } 
+          }
+        }
+      }
+    },
+    {
+      "name": "form",
+      "description": "Utilizes form tags for functionality of updating profile fields.",
+      "attributes": []
+    },
+    {
+      "name": "field",
+      "description": "Input fields within forms, such as text inputs, checkboxes, etc.",
+      "attributes": [
+        {"name": "data-bound-to", "description": "Binds a field to a specific profile attribute, such as loginID, email, etc."}
+      ]
+    },
+    {
+      "name": "widget",
+      "description": "Specialized components offering extended functionalities.",
+      "attributes": [],
+      "types": [
+        {
+          "name": "gigya-social-login",
+          "description": "A wrapper around SAP Customer Data Cloud's Login plugin.",
+          "attributes": [
+            {"name": "buttonsStyle", "description": "Style of the buttons."},
+            {"name": "width", "description": "Width of the plugin."},
+            {"name": "showTermsLink", "description": "Whether to show the terms link."}
+          ]
+        },
+        {
+          "name": "gigya-captcha",
+          "description": "A CAPTCHA component using Google's reCAPTCHA.",
+          "attributes": [
+            {"name": "lang", "description": "Language of the CAPTCHA."},
+            {"name": "theme", "description": "Theme of the CAPTCHA."},
+            {"name": "data-badge", "description": "Position of the Invisible reCAPTCHA badge."},
+            {"name": "data-type", "description": "Type of reCAPTCHA challenge."}
+          ]
+        },
+        {
+          "name": "gigya-password-strength",
+          "description": "Provides an indication of password strength.",
+          "attributes": [
+            {"name": "data-on-focus-bubble", "description": "Display the widget in a floating bubble on focus."},
+            {"name": "data-display-mode", "description": "Mode of display (meter, policy, combined)."},
+            {"name": "data-bubble-orientation", "description": "Orientation of the bubble (right, left, up, down)."}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "event",
+      "description": "Supports global and screen-set specific events for custom logic and integration.",
+      "attributes": [
+        {"name": "onLogin", "description": "Global event triggered upon user login."},
+        {"name": "onBeforeSubmit", "description": "Screen-set specific event triggered before form submission."},
+        {"name": "onAfterSubmit", "description": "Screen-set specific event triggered after form submission."}
+      ]
+    },
+    {
+      "name": "gigya-error-display",
+      "description": "Indicates an element bound to an error state of a form or field.",
+      "attributes": [
+        {"name": "data-bound-to", "description": "Indicates the object to which this error object is bound."},
+        {"name": "data-scope", "description": "Indicates the scope of this error object."},
+        {"name": "data-error-codes", "description": "List of error codes for which the error object will be displayed."}
+      ]
+    },
+    {
+      "name": "gigya-error-msg",
+      "description": "Container for automatically generated error messages.",
+      "attributes": [
+        {"name": "data-scope", "description": "Attribute indicating the scope of this error object."},
+        {"name": "data-error-codes", "description": "List of error codes for which the error container will be displayed."}
+      ]
+    },
+    {
+      "name": "interaction",
+      "tag": "input",
+      "properties": {
+        "data-switch-screen": {
+          "type": "string",
+          "description": "Specifies the screen to switch to upon interaction."
+        }
+      }
+      
+    }
+    
+ 
+  ]
+}
