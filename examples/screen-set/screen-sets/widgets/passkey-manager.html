@@ -1,0 +1,33 @@
+<div class="gigya-composite-control gigya-composite-control-passkey-manager-widget">
+  <div class="gigya-passkey-card-manager">
+    <h2 class="gigya-passkey-card-manager-label" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_HEADER"></h2>
+    <p class="gigya-passkey-card-manager-description" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_DESC"></p>
+    <span class="gigya-empty-list" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_EMPTY_LABEL"></span>
+    <ul class="gigya-card-list">
+      <li class="gigya-card gigya-passkey-card">
+        <div class="gigya-card-container">
+          <div class="gigya-row">
+            <h3 class="gigya-card-header" data-binding="true" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_CARD_HEADER"></h3>
+            <div class="gigya-new-tag"><span class="gigya-tag-label" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_TAG"></span></div>
+            <button type="button" class="gigya-column gigya-remove-passkey-icon" aria-label="remove passkey"></button>
+          </div>
+          <div class="gigya-table">
+            <div class="gigya-column">
+              <div class="gigya-row gigya-label-last-login" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_LAST_LOGIN"></div>
+              <div class="gigya-row gigya-label-country" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_COUNTRY"></div>
+              <div class="gigya-row gigya-label-last-login-ip" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_IP"></div>
+            </div>
+            <div class="gigya-column">
+              <div class="gigya-row gigya-label-last-login-value" data-binding="true">{{passkeys.lastLogin}}</div>
+              <div class="gigya-row gigya-label-country-value" data-binding="true">{{passkeys.country}}</div>
+              <div class="gigya-row gigya-label-last-login-ip-value" data-binding="true">{{passkeys.ipAddress}}</div>
+            </div>
+          </div>
+          <div class="gigya-no-info">
+            <div class="gigya-row gigya-no-info-label" data-translation-key="PASSKEY_MANAGER_WIDGET_100154364945444860_NO_INFO"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

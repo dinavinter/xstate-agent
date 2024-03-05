@@ -1,0 +1,21 @@
+{
+    "default": {
+        "HEADER_103922774110627800_LABEL": "Log in with an existing social network:",
+        "HEADER_42410265494573470_LABEL": "For security reasons, please log in again to confirm your identity:",
+        "HEADER_77983152646132900_LABEL": "Log in with an existing site account:",
+        "LABEL_85126704549903490_LABEL": "<span>or</span>",
+        "LINK_99497446013723440_LABEL": "Forgot password?",
+        "PASSWORD_53914923724987960_PLACEHOLDER": "Password",
+        "GIGYA_REAUTHENTICATION_SCREEN_CAPTION": "Re-Authentication",
+        "SUBMIT_105646307227927710_VALUE": "Submit",
+        "TEXTBOX_133276604158558530_PLACEHOLDER": "Email",
+        "LABEL_87688107752526350_LABEL": "Please enter your email address to reset your password:",
+        "LINK_74176145788560590_LABEL": "Back to Login",
+        "GIGYA_FORGOT_PASSWORD_SCREEN_CAPTION": "Forgot Password",
+        "SUBMIT_127042611760038580_VALUE": "Submit",
+        "TEXTBOX_48748804963966080_LABEL": "Email:",
+        "LABEL_83510705562728670_LABEL": "An email regarding your password change has been sent to your email address.",
+        "LINK_52481135344195420_LABEL": "<input type=\"button\" value=\"Back to Login\">",
+        "GIGYA_FORGOT_PASSWORD_SUCCESS_SCREEN_CAPTION": "Forgot Password"
+    }
+}

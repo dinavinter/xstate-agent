@@ -1,0 +1,2078 @@
+<div class="gigya-screen-set" id="Default-RegistrationLoginOuterSize"
+     data-on-pending-registration-screen="Default-RegistrationLoginOuterSize/gigya-complete-registration-screen"
+     data-on-pending-verification-screen="Default-RegistrationLoginOuterSize/gigya-verification-pending-screen"
+     data-on-pending-email-verification-code="Default-RegistrationLoginOuterSize/gigya-email-code-verification-screen"
+     data-on-pending-tfa-registration-screen="Default-RegistrationLoginOuterSize/gigya-tfa-registration-screen"
+     data-on-pending-tfa-verification-screen="Default-RegistrationLoginOuterSize/gigya-tfa-verification-screen"
+     data-on-pending-password-change-screen="Default-RegistrationLoginOuterSize/gigya-password-change-required-screen"
+     data-on-existing-login-identifier-screen="Default-LinkAccounts/gigya-link-account-screen"
+     data-on-pending-recent-login-screen="Default-ReAuthentication/gigya-reauthentication-screen" data-width="364"
+     data-responsive="true" data-dialog-style="modern">
+    <div id="gigya-login-screen" data-caption="Login" data-width="auto"
+         gigya-conditional:class="viewport.outerWidth < 550 ?gigya-screen v2 portrait mobile:viewport.outerWidth < 920 ?gigya-screen v2 portrait:"
+         class="gigya-screen v2 landscape gigya-composite-control-active">
+        <form class="gigya-login-form" id="gigya-login-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-row with-divider">
+                <div class="gigya-layout-cell responsive with-social-login ui-droppable ui-sortable">
+                    <h2 id="social-buttons-login-caption" data-toolbox-item-type="header" tabindex="-1"
+                        class="gigya-composite-control gigya-composite-control-header"
+                        data-wizard-base-translation-key="HEADER_111188166847589810">Quickly log in with your social
+                        network:</h2>
+                    <div class="ui-droppable ui-sortable">
+                        <div class="gigya-composite-control gigya-composite-control-social-login"
+                             data-toolbox-item-type="socialLogin">
+                            <div class="gigya-social-login">
+                                <param name="tabIndex" value="0">
+                                <param name="version" value="2">
+                                <param name="width" value="420" gigya-conditional:value="screenset.width < 430?100%">
+                                <param name="height" value="100">
+                                <param name="enabledProviders"
+                                       value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                                <param name="loginMode" value="standard">
+                                <param name="buttonsStyle" value="fullLogoColored">
+                                <param name="pagingButtonStyle" value="newArrows"
+                                       gigya-conditional:value="screenset.width < 430?auto:">
+                                <param name="buttonSize" value="45">
+                                <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                                <param name="showWhatsThis" value="false">
+                                <param name="showTermsLink" value="false">
+                                <param name="hideGigyaLink" value="true">
+                                <param name="_pluginCenterFix" value="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell responsive with-divider ui-droppable ui-sortable">
+
+                    <label class="gigya-divider-content gigya-composite-control gigya-composite-control-label"
+                           data-toolbox-item-type="label"
+                           data-wizard-base-translation-key="LABEL_48902362044111190">or</label>
+
+                </div>
+                <div class="gigya-layout-cell responsive with-site-login ui-droppable ui-sortable">
+                    <h2 id="login-with-email-password-caption" tabindex="-1" class="gigya-composite-control gigya-composite-control-header"
+                        data-toolbox-item-type="header"
+                        data-wizard-base-translation-key="HEADER_131443300282291300">
+                        Log in with your email and password:
+                    </h2>
+                    <div class="gigya-composite-control gigya-composite-control-textbox"
+                         data-toolbox-item-type="loginID" data-wizard-base-translation-key="LOGINID_1311311543682226">
+                        <input type="text" class="gigya-input-text" name="loginID" tabindex="0"  aria-labelledby="login-with-email-password-caption"
+                               data-gigya-placeholder="Email" placeholder="Email *" formnovalidate="formnovalidate">
+                        <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-password"
+                         data-toolbox-item-type="password"
+                         data-wizard-base-translation-key="PASSWORD_132128826476804690">
+                        <input type="password" data-gigya-placeholder="Password" placeholder="Password *"
+                               name="password" class="gigya-input-password" tabindex="0"
+                               formnovalidate="formnovalidate">
+                        <span class="gigya-error-msg" data-bound-to="password"></span>
+                    </div>
+                    <div class="gigya-layout-row ui-droppable ui-sortable">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <div class="gigya-composite-control gigya-composite-control-checkbox gigya-keep-me-logged-in"
+                                 data-css-class="gigya-keep-me-logged-in" data-toolbox-item-type="checkbox"
+                                 data-wizard-base-translation-key="CHECKBOX_76374189532411820">
+                                <input type="checkbox" name="remember" id="gigya-checkbox-remember"
+                                       class="gigya-input-checkbox" tabindex="0">
+                                <label class="gigya-label" for="gigya-checkbox-remember">
+                                    <span class="gigya-label-text gigya-checkbox-text">Keep me logged-in</span>
+                                    <label class="gigya-required-display" data-bound-to="remember"
+                                           style="display: none;">*</label>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <a data-switch-screen="gigya-forgot-password-screen"
+                               class="gigya-forgotPassword gigya-composite-control gigya-composite-control-link"
+                               data-css-class="gigya-forgotPassword" data-toolbox-item-type="link"
+                               data-wizard-base-translation-key="LINK_146308315993881860">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-captcha-widget v1"
+                         data-toolbox-item-type="captcha" remove-title="true"
+                         title="Make sure to configure the &quot;Policies&quot; page in your Gigya Admin Console">
+                        <div class="gigya-captcha-wrapper gigya-error-display" data-error-flags="captchaNeeded"
+                             data-bound-to="gigya-login-form">
+                            <div class="gigya-captcha">
+                                <param name="theme" value="white">
+                            </div>
+                            <span class="gigya-error-msg" data-bound-to="captchaText"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                         data-wizard-base-translation-key="SUBMIT_142674579108303380">
+                        <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                    </div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                         data-bound-to="gigya-login-form" data-toolbox-item-type="formError"
+                         data-wizard-setting-width="">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-login-form">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive under-site-login">
+                    <a data-switch-screen="gigya-register-screen"
+                       class="gigya-composite-control gigya-composite-control-link" data-toolbox-item-type="link"
+                       data-wizard-base-translation-key="LINK_105018431100429140">Don't have an account yet?</a>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+
+    <div id="gigya-passwordless-login-screen" data-caption="Login" data-width="auto"
+         gigya-conditional:class="viewport.outerWidth < 550 ?gigya-screen v2 portrait mobile:viewport.outerWidth < 920 ?gigya-screen v2 portrait:"
+         class="gigya-screen v2 landscape" style="display: block;" data-display-name="Passwordless Login">
+        <form class="gigya-passwordless-login-form" id="gigya-passwordless-login-form"
+              data-on-success-screen="gigya-auth-methods-screen">
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-row with-divider">
+                <div class="gigya-layout-cell responsive with-social-login ui-droppable ui-sortable">
+                    <h2 data-toolbox-item-type="header" class="gigya-composite-control gigya-composite-control-header"
+                        data-wizard-base-translation-key="HEADER_126852064385129860" style="">
+                        Quickly log in with your social network:
+                    </h2>
+                    <div class="ui-droppable ui-sortable" style="">
+                        <div class="gigya-composite-control gigya-composite-control-social-login"
+                             data-toolbox-item-type="socialLogin" style="">
+                            <div class="gigya-social-login">
+                                <param name="tabIndex" value="0">
+                                <param name="version" value="2">
+                                <param name="width" value="420" gigya-conditional:value="screenset.width < 430?100%">
+                                <param name="height" value="100">
+                                <param name="enabledProviders"
+                                       value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                                <param name="loginMode" value="standard">
+                                <param name="buttonsStyle" value="fullLogoColored">
+                                <param name="pagingButtonStyle" value="newArrows"
+                                       gigya-conditional:value="screenset.width < 430?auto:">
+                                <param name="buttonSize" value="45">
+                                <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                                <param name="showWhatsThis" value="false">
+                                <param name="showTermsLink" value="false">
+                                <param name="hideGigyaLink" value="true">
+                                <param name="_pluginCenterFix" value="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell responsive with-divider ui-droppable ui-sortable">
+                    <label class="gigya-divider-content gigya-composite-control gigya-composite-control-label"
+                           data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_21318607780879210"
+                           style="">or</label>
+                </div>
+                <div class="gigya-layout-cell responsive with-site-login ui-droppable ui-sortable">
+                    <h2 class="gigya-composite-control gigya-composite-control-header" data-toolbox-item-type="header"
+                        data-wizard-base-translation-key="HEADER_22407971240372776" style="">Log in with your email</h2>
+
+                    <div
+                            class="gigya-composite-control gigya-composite-control-textbox gigya-composite-control-loginID gigya-composite-control-active"
+                            data-toolbox-item-type="loginID" data-wizard-base-translation-key="LOGINID_22479701576194280"
+                            draggable="false"><input type="text" name="loginID" class="gigya-input-text"
+                                                     data-gigya-placeholder="Email" placeholder="Email"
+                                                     show-valid-checkmark="true" data-array-root=""> <span
+                            class="gigya-error-msg" data-bound-to="loginID"></span></div>
+                    <div class="gigya-layout-row ui-droppable ui-sortable">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable" style="">
+
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                         data-wizard-base-translation-key="SUBMIT_93932911338530350" style="">
+                        <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                    </div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                         data-bound-to="gigya-passwordless-login-form" data-toolbox-item-type="formError"
+                         data-wizard-setting-width="" style="">
+                        <div class="gigya-error-msg gigya-form-error-msg"
+                             data-bound-to="gigya-passwordless-login-form"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive under-site-login ui-droppable ui-sortable">
+                    <a data-switch-screen="gigya-register-screen"
+                       class="gigya-composite-control gigya-composite-control-link"
+                       data-toolbox-item-type="link" data-wizard-base-translation-key="LINK_134791094489335820"
+                       style="">Don't
+                        have an account yet?</a>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-auth-methods-screen" data-caption="Auth Methods" data-width="auto"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+         class="gigya-screen v2 portrait"
+         style="display: block;" data-display-name="Auth Methods">
+        <form class="gigya-auth-methods-form" id="gigya-auth-methods-form" data-auto-skip="true">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+
+                <h2 class="gigya-composite-control gigya-composite-control-header" data-toolbox-item-type="header"
+                    data-wizard-base-translation-key="HEADER_111117027845426430" draggable="false">Select Authentication Method</h2></div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-button"
+                     data-toolbox-item-type="authMethod"
+                     data-wizard-base-translation-key="AUTHMETHOD_67103775111210550" draggable="false" style="">
+                    <input type="button" class="gigya-input-button gigya-auth-method" value="Password"
+                           tabindex="0" data-switch-screen="gigya-password-auth-method-screen" data-auth-method="password">
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-button"
+                     data-toolbox-item-type="authMethod"
+                     data-wizard-base-translation-key="AUTHMETHOD_129069343527892940" draggable="false">
+                    <input type="button" class="gigya-input-button gigya-auth-method" value="Push Notification"
+                           tabindex="0" data-switch-screen="gigya-push-auth-method-screen" data-auth-method="push">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable"><a
+                    class="gigya-composite-control gigya-composite-control-link gigya-composite-control-active"
+                    data-toolbox-item-type="link" data-binding="true" target="_blank"
+                    data-wizard-base-translation-key="LINK_146950611669725570" draggable="false"
+                    data-switch-screen="gigya-passwordless-login-screen">Back to login screen</a></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-password-auth-method-screen" data-caption="Password Auth" data-width="auto"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+         class="gigya-screen v2 portrait gigya-composite-control-active" style="display: block;"
+         data-display-name="Password Auth">
+        <form class="gigya-password-auth-method-form" id="gigya-password-auth-method-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+
+                <h2 class="gigya-composite-control gigya-composite-control-header" data-toolbox-item-type="header"
+                    data-wizard-base-translation-key="HEADER_64542660260021010">Please enter your password</h2></div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     data-wizard-base-translation-key="PASSWORD_108749403241732260">
+                    <input type="password" data-gigya-placeholder="Password" placeholder="Password" name="password"
+                           class="gigya-input-password" tabindex="0" formnovalidate="formnovalidate" data-array-root="">
+                    <span class="gigya-error-msg" data-bound-to="password"></span>
+                </div>
+                <div class="gigya-layout-row ui-droppable ui-sortable">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-captcha-widget gigya-v2" remove-title="true"
+                     title="Make sure to configure the &quot;Policies&quot; page in your Gigya Admin Console"
+                     data-toolbox-item-type="captcha" style="">
+                    <div class="gigya-captcha-wrapper">
+                        <div class="gigya-captcha">
+                            <param name="theme" value="light">
+                            <param name="badge" value="bottomright">
+                            <param name="type" value="image">
+                            <param name="size" value="normal">
+                        </div>
+                        <span class="gigya-error-msg" data-bound-to="captchaText"></span></div>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     data-wizard-base-translation-key="SUBMIT_123066252847697120">
+                    <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-password-auth-method-form" data-toolbox-item-type="formError"
+                     data-wizard-setting-width="">
+                    <div class="gigya-error-msg gigya-form-error-msg"
+                         data-bound-to="gigya-password-auth-method-form"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    <a class="gigya-composite-control gigya-composite-control-link gigya-conditional"
+                       data-toolbox-item-type="link" data-binding="true" target="_blank"
+                       data-switch-screen="gigya-auth-methods-screen"
+                       data-wizard-base-translation-key="LINK_121888775297230990"
+                       style="" data-condition="authMethods.length > 1">Change login method</a>
+                    <a class="gigya-composite-control gigya-composite-control-link gigya-conditional"
+                       data-toolbox-item-type="link" data-binding="true" target="_blank"
+                       data-switch-screen="gigya-passwordless-login-screen"
+                       data-wizard-base-translation-key="LINK_68580796976183050"
+                       data-condition="authMethods.length === 1"
+                       style="">Back to login screen</a>
+                </div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    <a data-switch-screen="gigya-forgot-password-screen"
+                       class="gigya-forgotPassword gigya-composite-control gigya-composite-control-link"
+                       data-css-class="gigya-forgotPassword" data-toolbox-item-type="link"
+                       data-wizard-base-translation-key="LINK_96497981495915870">Forgot password?</a>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-push-auth-method-screen" data-caption="Push Notification Auth" data-width="auto"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+         class="gigya-screen v2 portrait gigya-composite-control-active" style="display: block;"
+         data-display-name="Push Notification Auth">
+        <form class="gigya-push-auth-method-form" id="gigya-push-auth-method-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+
+                <h2 class="gigya-composite-control gigya-composite-control-header" data-toolbox-item-type="header"
+                    data-wizard-base-translation-key="HEADER_44210002760242570">Please approve notification in your mobile device</h2></div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-layout-row ui-droppable ui-sortable">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-submit"
+                     data-toolbox-item-type="submit" data-wizard-base-translation-key="SUBMIT_52101347592418300"><input
+                        type="button" class="gigya-input-submit" onclick="return false" data-gigya-type="button"
+                        data-gigya-api-link="accounts.auth.push.sendVerification" value="Resend Push Notification">
+                </div>
+                <a class="gigya-composite-control gigya-composite-control-link gigya-conditional"
+                   data-toolbox-item-type="link" data-binding="true" target="_blank"
+                   data-wizard-base-translation-key="LINK_114318864490895000"
+                   data-switch-screen="gigya-auth-methods-screen" draggable="false" style="text-align: center;"
+                   data-condition="authMethods.length > 1" data-wizard-text-alignment="center">Change login method</a>
+                <a class="gigya-composite-control gigya-composite-control-link gigya-conditional"
+                   data-toolbox-item-type="link" data-binding="true" target="_blank"
+                   data-wizard-base-translation-key="LINK_130096189626726380"
+                   data-switch-screen="gigya-passwordless-login-screen" draggable="false" style="text-align: center;"
+                   data-condition="authMethods.length === 1" data-wizard-text-alignment="center">Back to login screen</a>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-password-auth-method-form" data-toolbox-item-type="formError"
+                     data-wizard-setting-width="">
+                    <div class="gigya-error-msg gigya-form-error-msg"
+                         data-bound-to="gigya-password-auth-method-form"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-register-screen" data-caption="Registration" data-width="auto" class="gigya-screen v2 landscape"
+         gigya-conditional:class="viewport.outerWidth < 550 ?gigya-screen v2 portrait mobile:viewport.outerWidth < 920 ?gigya-screen v2 portrait:"
+         data-on-pending-verification-screen="gigya-verification-sent-screen">
+        <form class="gigya-register-form" id="gigya-register-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-row with-divider">
+                <div id="register-social-login"
+                     class="gigya-layout-cell responsive with-social-login ui-droppable ui-sortable">
+                    <div class="gigya-layout-row ui-droppable ui-sortable">
+                        <h2 class="gigya-composite-control gigya-composite-control-header"
+                            data-toolbox-item-type="header" style="display: block;"
+                            data-wizard-base-translation-key="HEADER_108728337563591200">
+                            Quickly register with your social network:
+                        </h2>
+                        <div class="gigya-composite-control gigya-composite-control-social-login"
+                             data-toolbox-item-type="socialLogin" style="display: block;">
+                            <div class="gigya-social-login">
+                                <param name="tabIndex" value="0">
+                                <param name="version" value="2">
+                                <param value="420" name="width" gigya-conditional:value="screenset.width < 430?100%">
+                                <param value="100" name="height">
+                                <param name="enabledProviders"
+                                       value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                                <param name="loginMode" value="standard">
+                                <param name="buttonsStyle" value="fullLogoColored">
+                                <param name="pagingButtonStyle" value="newArrows"
+                                       gigya-conditional:value="screenset.width < 430?auto:">
+                                <param name="buttonSize" value="45">
+                                <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                                <param name="showWhatsThis" value="false">
+                                <param name="showTermsLink" value="false">
+                                <param name="hideGigyaLink" value="true">
+                                <param name="_pluginCenterFix" value="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                    <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+                </div>
+                <div class="gigya-layout-cell responsive with-divider ui-droppable ui-sortable">
+                    <label class="gigya-divider-content gigya-label-text gigya-composite-control gigya-composite-control-label"
+                           data-toolbox-item-type="label"
+                           data-wizard-base-translation-key="LABEL_139978773486588850">or</label>
+                </div>
+                <div id="register-site-login"
+                     class="gigya-layout-cell responsive with-site-login ui-droppable ui-sortable">
+                    <div class="gigya-layout-row ui-droppable ui-sortable">
+                        <h2 class="gigya-composite-control gigya-composite-control-header"
+                            data-toolbox-item-type="header" data-wizard-base-translation-key="HEADER_63695688742051540">
+                            Register with your email and password:
+                        </h2>
+                        <div class="gigya-layout-row">
+                            <div class="gigya-composite-control gigya-composite-control-textbox"
+                                 data-toolbox-item-type="loginID"
+                                 data-wizard-base-translation-key="LOGINID_126653578050634370">
+                                <input type="text" class="gigya-input-text" name="email" show-valid-checkmark="true"
+                                       data-display-name="" data-gigya-placeholder="Email" placeholder="Email *"
+                                       aria-label="Email" formnovalidate="formnovalidate" tabindex="0">
+                                <span class="gigya-error-msg" data-bound-to="email"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="names-row" class="gigya-layout-row with-two-inputs">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <div class="gigya-composite-control gigya-composite-control-textbox"
+                                 data-toolbox-item-type="textbox" style="display: block;"
+                                 data-wizard-base-translation-key="TEXTBOX_72105706170970860">
+                                <input type="text" data-gigya-placeholder="First name" placeholder="First name"
+                                       aria-label="First name" class="gigya-input-text" name="profile.firstName"
+                                       show-valid-checkmark="true" formnovalidate="formnovalidate" tabindex="0">
+                                <span class="gigya-error-msg" data-bound-to="profile.firstName"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <div class="gigya-composite-control gigya-composite-control-textbox"
+                                 data-toolbox-item-type="textbox" style="display: block;"
+                                 data-wizard-base-translation-key="TEXTBOX_75385478551382400">
+                                <input type="text" data-gigya-placeholder="Last name" placeholder="Last name"
+                                       aria-label="Last name" class="gigya-input-text" name="profile.lastName"
+                                       show-valid-checkmark="true" tabindex="0">
+                                <span class="gigya-error-msg" data-bound-to="profile.lastName"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="password-row" class="gigya-layout-row with-two-inputs">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <div class="gigya-composite-control gigya-composite-control-password"
+                                 data-toolbox-item-type="password" style="display: block;"
+                                 data-wizard-base-translation-key="PASSWORD_92109928057504110">
+                                <input type="password" data-gigya-placeholder="Password" placeholder="Password *"
+                                       aria-label="Password" name="password" class="gigya-input-password"
+                                       show-valid-checkmark="true" tabindex="0" show-password-strength="left"
+                                       gigya-conditional:show-password-strength="viewport.outerWidth < 920?up">
+                                <span class="gigya-error-msg" data-bound-to="password"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                            <div class="gigya-composite-control gigya-composite-control-password"
+                                 data-toolbox-item-type="password"
+                                 data-wizard-base-translation-key="PASSWORD_18495765554860224">
+                                <input type="password" data-gigya-placeholder="Confirm password"
+                                       placeholder="Confirm password *" aria-label="Confirm password"
+                                       class="gigya-input-password" name="passwordRetype" tabindex="0"
+                                       show-valid-checkmark="true" data-required="true">
+                                <span class="gigya-error-msg" data-bound-to="passwordRetype"></span>
+                            </div>
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-checkbox"
+                         data-toolbox-item-type="checkbox"
+                         data-wizard-base-translation-key="CHECKBOX_11798816851057300">
+                        <input type="checkbox" id="gigya-checkbox-subscribe" name="data.subscribe"
+                               aria-label="Subscribe to our newsletter" class="gigya-input-checkbox"
+                               data-display-name="" tabindex="0">
+                        <label class="gigya-label" for="gigya-checkbox-subscribe">
+                            <span class="gigya-label-text gigya-checkbox-text">Subscribe to our newsletter</span>
+                            <label class="gigya-required-display" data-bound-to="data.subscribe" style="display: none;">*</label>
+                        </label>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-checkbox"
+                         data-toolbox-item-type="checkbox"
+                         data-wizard-base-translation-key="CHECKBOX_79786885293367740">
+                        <input type="checkbox" id="gigya-checkbox-terms" name="data.terms" class="gigya-input-checkbox"
+                               data-display-name="" tabindex="0">
+                        <label class="gigya-label" for="gigya-checkbox-terms">
+                            <span class="gigya-label-text gigya-checkbox-text">I have read and understood the <a
+                                    class="gigya-terms-of-use" href="#">Terms of Use</a></span>
+                            <label class="gigya-required-display" data-bound-to="data.terms"
+                                   style="display: none;">*</label>
+                        </label>
+                    </div>
+                    <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                         data-wizard-base-translation-key="SUBMIT_7667737432077126">
+                        <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                    </div>
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                         data-bound-to="gigya-register-form" data-toolbox-item-type="formError"
+                         data-wizard-setting-width="">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-register-form"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive under-site-login">
+                    <a data-switch-screen="gigya-login-screen"
+                       class="gigya-composite-control gigya-composite-control-link" data-toolbox-item-type="link"
+                       data-wizard-base-translation-key="LINK_55817364832410216">Have an account already?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="gigya-complete-registration-screen" data-caption="Profile Completion" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <form class="gigya-profile-form" id="gigya-profile-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text"
+                       data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_82751524717670350">
+                    We still need a few more details:
+                </label>
+                <div class="gigya-composite-control gigya-composite-control-textbox" data-toolbox-item-type="textbox"
+                     style="display: block;" data-wizard-base-translation-key="TEXTBOX_136884197726350880">
+                    <label class="gigya-label" for="gigya-textbox-email">
+                        <span class="gigya-label-text">Email:</span>
+                        <label class="gigya-required-display" data-bound-to="email" style="display: none;">*</label>
+                    </label>
+                    <input type="text" value="" name="email" id="gigya-textbox-email" class="gigya-input-text"
+                           formnovalidate="formnovalidate" tabindex="0">
+                    <span class="gigya-error-msg" data-bound-to="email"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-dropdown" data-toolbox-item-type="dropdown"
+                     style="display: block;" data-wizard-base-translation-key="DROPDOWN_16234574578704520">
+                    <label class="gigya-label" for="gigya-dropdown-birthYear">
+                        <span class="gigya-label-text">Year of birth:</span>
+                        <label class="gigya-required-display" data-bound-to="profile.birthYear"
+                               style="display: none;">*</label>
+                    </label>
+                    <select name="profile.birthYear" id="gigya-dropdown-birthYear" tabindex="0">
+                        <option value=""></option>
+                        <option value="1920">1920</option>
+                        <option value="1921">1921</option>
+                        <option value="1922">1922</option>
+                        <option value="1923">1923</option>
+                        <option value="1924">1924</option>
+                        <option value="1925">1925</option>
+                        <option value="1926">1926</option>
+                        <option value="1927">1927</option>
+                        <option value="1928">1928</option>
+                        <option value="1929">1929</option>
+                        <option value="1930">1930</option>
+                        <option value="1931">1931</option>
+                        <option value="1932">1932</option>
+                        <option value="1933">1933</option>
+                        <option value="1934">1934</option>
+                        <option value="1935">1935</option>
+                        <option value="1936">1936</option>
+                        <option value="1937">1937</option>
+                        <option value="1938">1938</option>
+                        <option value="1939">1939</option>
+                        <option value="1940">1940</option>
+                        <option value="1941">1941</option>
+                        <option value="1942">1942</option>
+                        <option value="1943">1943</option>
+                        <option value="1944">1944</option>
+                        <option value="1945">1945</option>
+                        <option value="1946">1946</option>
+                        <option value="1947">1947</option>
+                        <option value="1948">1948</option>
+                        <option value="1949">1949</option>
+                        <option value="1950">1950</option>
+                        <option value="1951">1951</option>
+                        <option value="1952">1952</option>
+                        <option value="1953">1953</option>
+                        <option value="1954">1954</option>
+                        <option value="1955">1955</option>
+                        <option value="1956">1956</option>
+                        <option value="1957">1957</option>
+                        <option value="1958">1958</option>
+                        <option value="1959">1959</option>
+                        <option value="1960">1960</option>
+                        <option value="1961">1961</option>
+                        <option value="1962">1962</option>
+                        <option value="1963">1963</option>
+                        <option value="1964">1964</option>
+                        <option value="1965">1965</option>
+                        <option value="1966">1966</option>
+                        <option value="1967">1967</option>
+                        <option value="1968">1968</option>
+                        <option value="1969">1969</option>
+                        <option value="1970">1970</option>
+                        <option value="1971">1971</option>
+                        <option value="1972">1972</option>
+                        <option value="1973">1973</option>
+                        <option value="1974">1974</option>
+                        <option value="1975">1975</option>
+                        <option value="1976">1976</option>
+                        <option value="1977">1977</option>
+                        <option value="1978">1978</option>
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                        <option value="1982">1982</option>
+                        <option value="1983">1983</option>
+                        <option value="1984">1984</option>
+                        <option value="1985">1985</option>
+                        <option value="1986">1986</option>
+                        <option value="1987">1987</option>
+                        <option value="1988">1988</option>
+                        <option value="1989">1989</option>
+                        <option value="1990">1990</option>
+                        <option value="1991">1991</option>
+                        <option value="1992">1992</option>
+                        <option value="1993">1993</option>
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option value="1998">1998</option>
+                        <option value="1999">1999</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                    </select>
+                    <span class="gigya-error-msg" data-bound-to="profile.birthYear"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-textbox" data-toolbox-item-type="textbox"
+                     style="display: block;" data-wizard-base-translation-key="TEXTBOX_65559603100946710">
+                    <label class="gigya-label" for="gigya-textbox-zip">
+                        <span class="gigya-label-text">Postcode:</span>
+                        <label class="gigya-required-display" data-bound-to="profile.zip"
+                               style="display: none;">*</label>
+                    </label>
+                    <input type="text" value="" name="profile.zip" id="gigya-textbox-zip" class="gigya-input-text"
+                           tabindex="0">
+                    <span class="gigya-error-msg" data-bound-to="profile.zip"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-checkbox" data-toolbox-item-type="checkbox"
+                     data-wizard-base-translation-key="CHECKBOX_76245746717438300">
+                    <input type="checkbox" class="gigya-input-checkbox" name="data.subscribe"
+                           id="gigya-checkbox-subscribe" tabindex="0">
+                    <label class="gigya-label" for="gigya-checkbox-subscribe">
+                        <span class="gigya-label-text">Subscribe to our newsletter</span>
+                        <label class="gigya-required-display" data-bound-to="data.subscribe"
+                               style="display: none;">*</label>
+                    </label>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     style="display: block;" data-wizard-base-translation-key="SUBMIT_31429658457676556">
+                    <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-profile-form" data-toolbox-item-type="formError">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form">
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div
+            id="gigya-mobile-login-screen"
+            data-caption="Log In With Your Mobile Phone"
+            data-width="auto"
+            class="gigya-screen v2 portrait"
+            gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+            style="display: none;"
+    >
+        <form class="gigya-mobile-login-form" id="gigya-mobile-login-form"
+              data-on-success-screen="gigya-mobile-verification-screen">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+                <label
+                        class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text"
+                        data-toolbox-item-type="label"
+                        data-wizard-base-translation-key="LABEL_1555592368664">
+                    A code will be sent to your mobile phone number.
+                </label>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-fieldset gigya-composite-control-phone-number-input"
+                     data-toolbox-item-type="phone-number-input"
+                     data-wizard-base-translation-key="PHONE-NUMBER-INPUT_108317755698821250"
+                >
+                    <fieldset type="gigya-phone-number-input"
+                              data-display-name="phone number"
+                              name="phoneNumber"
+                              show-valid-checkmark="true"
+                              data-required="true"
+                              data-array-root="">
+                        <legend class="gigya-legend">
+                            <span class="gigya-legend-text">Enter your mobile number:</span>
+                            <label class="gigya-required-display" data-bound-to="phoneNumber">*</label>
+                        </legend>
+                        <select class="gigya-country-code-select" tabindex="0">
+                            <option id="gig-selected-country-code" hidden="" disabled=""></option>
+                            <option value="0">country code</option>
+                            <optgroup label="------------------------">
+                                <option value="+1">United States (+1)</option>
+                                <option value="+1">Canada (+1)</option>
+                                <option value="+44">United Kingdom (+44)</option>
+                                <option value="+61">Australia (+61)</option>
+                                <option value="+81">Japan (+81)</option>
+                            </optgroup>
+                            <optgroup label="------------------------">
+                                <option value="+93">Afghanistan (+93)</option>
+                                <option value="+355">Albania (+355)</option>
+                                <option value="+213">Algeria (+213)</option>
+                                <option value="+376">Andorra (+376)</option>
+                                <option value="+244">Angola (+244)</option>
+                                <option value="+809">Anguilla (+809)</option>
+                                <option value="+268">Antigua and Barbuda (+268)</option>
+                                <option value="+54">Argentina (+54)</option>
+                                <option value="+374">Armenia (+374)</option>
+                                <option value="+297">Aruba (+297)</option>
+                                <option value="+61">Australia (+61)</option>
+                                <option value="+43">Austria (+43)</option>
+                                <option value="+994">Azerbaijan (+994)</option>
+                                <option value="+973">Bahrain (+973)</option>
+                                <option value="+880">Bangladesh (+880)</option>
+                                <option value="+246">Barbados (+246)</option>
+                                <option value="+375">Belarus (+375)</option>
+                                <option value="+32">Belgium (+32)</option>
+                                <option value="+501">Belize (+501)</option>
+                                <option value="+229">Benin (+229)</option>
+                                <option value="+809">Bermuda (+809)</option>
+                                <option value="+975">Bhutan (+975)</option>
+                                <option value="+591">Bolivia (+591)</option>
+                                <option value="+387">Bosnia And Herzegovina (+387)</option>
+                                <option value="+267">Botswana (+267)</option>
+                                <option value="+55">Brazil (+55)</option>
+                                <option value="+246">British Indian Ocean Territory (+246)</option>
+                                <option value="+673">Brunei (+673)</option>
+                                <option value="+359">Bulgaria (+359)</option>
+                                <option value="+226">Burkina Faso (+226)</option>
+                                <option value="+257">Burundi (+257)</option>
+                                <option value="+855">Cambodia (+855)</option>
+                                <option value="+237">Cameroon (+237)</option>
+                                <option value="+1">Canada (+1)</option>
+                                <option value="+238">Cape Verde (+238)</option>
+                                <option value="+345">Cayman Islands (+345)</option>
+                                <option value="+235">Chad (+235)</option>
+                                <option value="+56">Chile (+56)</option>
+                                <option value="+86">China (+86)</option>
+                                <option value="+57">Colombia (+57)</option>
+                                <option value="+242">Congo (+242)</option>
+                                <option value="+243">Congo, The Democratic Republic Of The (+243)</option>
+                                <option value="+506">Costa Rica (+506)</option>
+                                <option value="+225">Cote d\'Ivoire (+225)</option>
+                                <option value="+385">Croatia (+385)</option>
+                                <option value="+53">Cuba (+53)</option>
+                                <option value="+357">Cyprus (+357)</option>
+                                <option value="+420">Czech Republic (+420)</option>
+                                <option value="+45">Denmark (+45)</option>
+                                <option value="+253">Djibouti (+253)</option>
+                                <option value="+767">Dominica (+767)</option>
+                                <option value="+809">Dominican Republic (+809)</option>
+                                <option value="+670">East Timor (+670)</option>
+                                <option value="+593">Ecuador (+593)</option>
+                                <option value="+20">Egypt (+20)</option>
+                                <option value="+503">El Salvador (+503)</option>
+                                <option value="+240">Equatorial Guinea (+240)</option>
+                                <option value="+372">Estonia (+372)</option>
+                                <option value="+500">Falkland Islands (Malvinas) (+500)</option>
+                                <option value="+298">Faroe Islands (+298)</option>
+                                <option value="+679">Fiji (+679)</option>
+                                <option value="+358">Finland (+358)</option>
+                                <option value="+33">France (+33)</option>
+                                <option value="+594">French Guiana (+594)</option>
+                                <option value="+689">French Polynesia (+689)</option>
+                                <option value="+241">Gabon (+241)</option>
+                                <option value="+220">Gambia (+220)</option>
+                                <option value="+995">Georgia (+995)</option>
+                                <option value="+49">Germany (+49)</option>
+                                <option value="+233">Ghana (+233)</option>
+                                <option value="+350">Gibraltar (+350)</option>
+                                <option value="+30">Greece (+30)</option>
+                                <option value="+299">Greenland (+299)</option>
+                                <option value="+473">Grenada (+473)</option>
+                                <option value="+590">Guadeloupe (+590)</option>
+                                <option value="+502">Guatemala (+502)</option>
+                                <option value="+32767">Guernsey (+32767)</option>
+                                <option value="+224">Guinea (+224)</option>
+                                <option value="+592">Guyana (+592)</option>
+                                <option value="+509">Haiti (+509)</option>
+                                <option value="+504">Honduras (+504)</option>
+                                <option value="+852">Hong Kong (+852)</option>
+                                <option value="+36">Hungary (+36)</option>
+                                <option value="+354">Iceland (+354)</option>
+                                <option value="+91">India (+91)</option>
+                                <option value="+62">Indonesia (+62)</option>
+                                <option value="+98">Iran (+98)</option>
+                                <option value="+964">Iraq (+964)</option>
+                                <option value="+353">Ireland (+353)</option>
+                                <option value="+44">Isle Of Man (+44)</option>
+                                <option value="+972">Israel (+972)</option>
+                                <option value="+39">Italy (+39)</option>
+                                <option value="+876">Jamaica (+876)</option>
+                                <option value="+81">Japan (+81)</option>
+                                <option value="+44">Jersey (+44)</option>
+                                <option value="+962">Jordan (+962)</option>
+                                <option value="+7">Kazakhstan (+7)</option>
+                                <option value="+254">Kenya (+254)</option>
+                                <option value="+82">Korea, South (+82)</option>
+                                <option value="+965">Kuwait (+965)</option>
+                                <option value="+996">Kyrgyzstan (+996)</option>
+                                <option value="+371">Latvia (+371)</option>
+                                <option value="+961">Lebanon (+961)</option>
+                                <option value="+266">Lesotho (+266)</option>
+                                <option value="+231">Liberia (+231)</option>
+                                <option value="+218">Libya (+218)</option>
+                                <option value="+423">Liechtenstein (+423)</option>
+                                <option value="+370">Lithuania (+370)</option>
+                                <option value="+352">Luxembourg (+352)</option>
+                                <option value="+853">Macao (+853)</option>
+                                <option value="+389">Macedonia (+389)</option>
+                                <option value="+261">Madagascar (+261)</option>
+                                <option value="+265">Malawi (+265)</option>
+                                <option value="+60">Malaysia (+60)</option>
+                                <option value="+960">Maldives (+960)</option>
+                                <option value="+223">Mali (+223)</option>
+                                <option value="+356">Malta (+356)</option>
+                                <option value="+596">Martinique (+596)</option>
+                                <option value="+222">Mauritania (+222)</option>
+                                <option value="+230">Mauritius (+230)</option>
+                                <option value="+52">Mexico (+52)</option>
+                                <option value="+373">Moldova (+373)</option>
+                                <option value="+33">Monaco (+33)</option>
+                                <option value="+976">Mongolia (+976)</option>
+                                <option value="+382">Montenegro (+382)</option>
+                                <option value="+473">Montserrat (+473)</option>
+                                <option value="+212">Morocco (+212)</option>
+                                <option value="+258">Mozambique (+258)</option>
+                                <option value="+95">Myanmar (+95)</option>
+                                <option value="+264">Namibia (+264)</option>
+                                <option value="+977">Nepal (+977)</option>
+                                <option value="+31">Netherlands (+31)</option>
+                                <option value="+599">Netherlands Antilles (+599)</option>
+                                <option value="+687">New Caledonia (+687)</option>
+                                <option value="+64">New Zealand (+64)</option>
+                                <option value="+505">Nicaragua (+505)</option>
+                                <option value="+227">Niger (+227)</option>
+                                <option value="+234">Nigeria (+234)</option>
+                                <option value="+1670">Northern Mariana Islands (+1670)</option>
+                                <option value="+47">Norway (+47)</option>
+                                <option value="+968">Oman (+968)</option>
+                                <option value="+92">Pakistan (+92)</option>
+                                <option value="+970">Palestine (+970)</option>
+                                <option value="+507">Panama (+507)</option>
+                                <option value="+595">Paraguay (+595)</option>
+                                <option value="+51">Peru (+51)</option>
+                                <option value="+63">Philippines (+63)</option>
+                                <option value="+48">Poland (+48)</option>
+                                <option value="+351">Portugal (+351)</option>
+                                <option value="+1787">Puerto Rico (+1787)</option>
+                                <option value="+974">Qatar (+974)</option>
+                                <option value="+262">Reunion (+262)</option>
+                                <option value="+40">Romania (+40)</option>
+                                <option value="+7">Russia (+7)</option>
+                                <option value="+250">Rwanda (+250)</option>
+                                <option value="+1869">Saint Kitts and Nevis (+1869)</option>
+                                <option value="+1758">Saint Lucia (+1758)</option>
+                                <option value="+1784">Saint Vincent (+1784)</option>
+                                <option value="+966">Saudi Arabia (+966)</option>
+                                <option value="+221">Senegal (+221)</option>
+                                <option value="+381">Serbia (+381)</option>
+                                <option value="+248">Seychelles (+248)</option>
+                                <option value="+232">Sierra Leone (+232)</option>
+                                <option value="+65">Singapore (+65)</option>
+                                <option value="+421">Slovakia (+421)</option>
+                                <option value="+386">Slovenia (+386)</option>
+                                <option value="+252">Somalia (+252)</option>
+                                <option value="+27">South Africa (+27)</option>
+                                <option value="+34">Spain (+34)</option>
+                                <option value="+94">Sri Lanka (+94)</option>
+                                <option value="+249">Sudan (+249)</option>
+                                <option value="+597">Suriname (+597)</option>
+                                <option value="+268">Swaziland (+268)</option>
+                                <option value="+46">Sweden (+46)</option>
+                                <option value="+41">Switzerland (+41)</option>
+                                <option value="+963">Syria (+963)</option>
+                                <option value="+886">Taiwan (+886)</option>
+                                <option value="+7">Tajikistan (+7)</option>
+                                <option value="+255">Tanzania (+255)</option>
+                                <option value="+66">Thailand (+66)</option>
+                                <option value="+228">Togo (+228)</option>
+                                <option value="+676">Tonga (+676)</option>
+                                <option value="+1868">Trinidad And Tobago (+1868)</option>
+                                <option value="+216">Tunisia (+216)</option>
+                                <option value="+90">Turkey (+90)</option>
+                                <option value="+993">Turkmenistan (+993)</option>
+                                <option value="+256">Uganda (+256)</option>
+                                <option value="+380">Ukraine (+380)</option>
+                                <option value="+971">United Arab Emirates (+971)</option>
+                                <option value="+44">United Kingdom (+44)</option>
+                                <option value="+1">United States (+1)</option>
+                                <option value="+598">Uruguay (+598)</option>
+                                <option value="+7">Uzbekistan (+7)</option>
+                                <option value="+678">Vanuatu (+678)</option>
+                                <option value="+58">Venezuela (+58)</option>
+                                <option value="+84">Viet Nam (+84)</option>
+                                <option value="+1284">Virgin Islands, British (+1284)</option>
+                                <option value="+681">Wallis And Futuna (+681)</option>
+                                <option value="+381">Yemen (+381)</option>
+                                <option value="+260">Zambia (+260)</option>
+                                <option value="+263">Zimbabwe (+263)</option>
+                            </optgroup>
+                        </select>
+                        <input class="gigya-input-text gigya-subscriber-phone-number-input"
+                               tabindex="0"
+                               type="text"
+                               data-gigya-placeholder="subscriber number"
+                               placeholder="subscriber number"
+                        />
+                    </fieldset>
+                    <span class="gigya-error-msg" data-bound-to="phoneNumber"></span></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div
+                        class="gigya-composite-control gigya-composite-control-submit"
+                        data-toolbox-item-type="submit"
+                        style="display: block;"
+                        data-wizard-base-translation-key="SUBMIT_314293454325435"
+                >
+                    <input type="submit" class="gigya-input-submit" value="Get The Code" tabindex="0"/>
+                </div>
+                <div
+                        class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                        data-bound-to="gigya-mobile-login-form"
+                        data-toolbox-item-type="formError"
+                >
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-mobile-login-form"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-change-email-screen" data-caption="Change Your Email" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:" style="display: block;"
+         data-display-name="Change Your Email">
+        <form class="gigya-otp-send-code-form" id="gigya-send-code-form"
+              data-on-success-screen="gigya-email-code-verification-screen">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+                <label
+                        class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text gigya-composite-control-active"
+                        data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_56426764264083580"
+                        draggable="false" style="" data-binding="true">A code will be sent to your email</label>
+                <div class="gigya-composite-control gigya-composite-control-textbox" data-toolbox-item-type="textbox"
+                     data-wizard-base-translation-key="TEXTBOX_20913098960397852"><label class="gigya-label"
+                                                                                         data-binding="true"
+                                                                                         for="gigya-textbox-20913098960397852"><span
+                        class="gigya-label-text">Email</span><label class="gigya-required-display"
+                                                                    data-bound-to="phoneNumber" style=""
+                                                                    data-binding="true"
+                                                                    for="gigya-textbox-20913098960397852">*</label></label>
+                    <input type="text" class="gigya-input-text" id="gigya-textbox-20913098960397852"
+                           show-valid-checkmark="true" data-gigya-type="text" name="email" data-array-root=""> <span
+                            class="gigya-error-msg" data-bound-to="phoneNumber"></span></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-submit gigya-composite-control-hover"
+                     data-toolbox-item-type="submit" style="display: block;"
+                     data-wizard-base-translation-key="SUBMIT_137794634987176350">
+                    <input type="submit" class="gigya-input-submit" value="Get The Code" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-otp-send-code-form" data-toolbox-item-type="formError">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-otp-send-code-form"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-email-code-verification-screen" data-caption="Enter The Code" data-width="auto"
+         class="gigya-screen v2 portrait gigya-composite-control-active"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:" style="display: block;"
+         data-display-name="Verify New Email">
+        <form class="gigya-otp-update-form" id="gigya-otp-update-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label"
+                       data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_124580104205672500"
+                       draggable="false" data-binding="true">Enter the code sent to your email <a data-binding="true"
+                                                                                                  data-switch-screen="gigya-change-email-screen">
+                    {{accountInfo.email}}
+                    <i class="gigya-pencil"></i></a></label>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-textbox" data-toolbox-item-type="textbox"
+                     style="display: block;" data-wizard-base-translation-key="TEXTBOX_23072131815411060">
+                    <input type="text" value="" name="code" autocomplete="off" id="gigya-textbox-code"
+                           class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-array-root="">
+                    <span class="gigya-error-msg" data-bound-to="code"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     style="display: block;" data-wizard-base-translation-key="SUBMIT_106757411555670860">
+                    <input type="submit" class="gigya-input-submit" value="Verify" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-otp-update-form" data-toolbox-item-type="formError">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-otp-update-form"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-composite-control gigya-composite-control-link" data-toolbox-item-type="label"
+                       data-wizard-base-translation-key="LABEL_45421446589093550" draggable="false">
+                    Didn't get the code? <a data-gigya-api-link="accounts.otp.sendCode">Click Here</a>
+                </label>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div
+            id="gigya-mobile-verification-screen"
+            data-caption="Enter The Code"
+            data-width="auto"
+            class="gigya-screen v2 portrait"
+            gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+            style="display:none;">
+        <form class="gigya-mobile-verification-form" id="gigya-mobile-verification-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label
+                        class="gigya-label-text gigya-composite-control gigya-composite-control-label"
+                        data-toolbox-item-type="label"
+                        data-wizard-base-translation-key="LABEL_1555593146287">
+                    Enter the code sent to your phone <a data-binding="true"
+                                                         data-switch-screen="gigya-mobile-login-screen">
+                    {{accountInfo.phoneNumber}}<i class="gigya-pencil"></i></a>
+                </label>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div
+                        class="gigya-composite-control gigya-composite-control-textbox"
+                        data-toolbox-item-type="textbox"
+                        style="display: block;"
+                >
+                    <input
+                            type="text"
+                            value=""
+                            name="code"
+                            id="gigya-textbox-code"
+                            class="gigya-input-text"
+                            formnovalidate="formnovalidate"
+                            tabindex="0"
+                            data-array-root=""
+                    />
+                    <span class="gigya-error-msg" data-bound-to="code"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div
+                        class="gigya-composite-control gigya-composite-control-submit"
+                        data-toolbox-item-type="submit"
+                        style="display: block;"
+                        data-wizard-base-translation-key="SUBMIT_31429890890890"
+                >
+                    <input type="submit" class="gigya-input-submit" value="Verify" tabindex="0"/>
+                </div>
+                <div
+                        class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                        data-bound-to="gigya-mobile-verification-form"
+                        data-toolbox-item-type="formError"
+                >
+                    <div class="gigya-error-msg gigya-form-error-msg"
+                         data-bound-to="gigya-mobile-verification-form"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label
+                        class="gigya-composite-control gigya-composite-control-link"
+                        data-toolbox-item-type="label"
+                        data-wizard-base-translation-key="LABEL_546546790858">
+                    Didn't get the code? <a data-gigya-api-link="accounts.otp.sendCode">Click Here</a>
+                </label>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-forgot-password-screen" data-width="auto" data-caption="Forgot Password"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500? gigya-screen v2 portrait mobile">
+        <form class="gigya-reset-password-form" data-on-success-screen="gigya-forgot-password-success-screen"
+              id="gigya-reset-password-form">
+            <label class="gigya-composite-control gigya-composite-control-label main-text letter-spacing-s"
+                   data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_47776247120507590">Please
+                enter your email address to reset your password:</label>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-textbox email-wrapper"
+                     data-toolbox-item-type="loginID" style="display: block;"
+                     data-wizard-base-translation-key="LOGINID_1762354922073180" draggable="false"><label
+                        class="gigya-label" for="gigya-textbox-loginID"><span
+                        class="gigya-label-text">Email:</span><label class="gigya-required-display"
+                                                                     data-bound-to="loginID"
+                                                                     for="gigya-textbox-loginID">*</label></label>
+
+                    <input type="text" name="loginID" id="gigya-textbox-loginID" class="gigya-input-text"
+                           formnovalidate="formnovalidate" tabindex="0">
+                    <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-submit submit-wrapper"
+                     data-toolbox-item-type="submit" data-wizard-base-translation-key="SUBMIT_81725475708397440">
+                    <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-reset-password-form" data-toolbox-item-type="formError">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-reset-password-form">
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <a class="gigya-composite-control gigya-composite-control-link" data-wizard-text-alignment="center"
+                   data-toolbox-item-type="link" data-switch-screen="gigya-login-screen"
+                   data-wizard-base-translation-key="LINK_125263109889403890">Back to Login</a>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-forgot-password-success-screen" data-caption="Forgot Password" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <label data-toolbox-item-type="label"
+                   class="gigya-composite-control gigya-composite-control-label main-text gigya-message"
+                   data-css-class="main-text gigya-message" data-wizard-base-translation-key="LABEL_32342199862391930">An
+                email regarding your password change has been sent to your email address.</label>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link"
+               data-toolbox-item-type="link" data-switch-screen="gigya-login-screen" data-wizard-text-alignment="center"
+               style="text-align: center;" data-wizard-base-translation-key="LINK_64563424514074200">
+                <input tabindex="0" type="button" value="Back to Login">
+            </a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+        <div class="gigya-clear"></div>
+    </div>
+
+    <div id="gigya-reset-password-screen" data-caption="Reset Password" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+         data-display-name="Reset Password">
+        <form class="gigya-reset-password-form" data-on-success-screen="gigya-reset-password-success-screen"
+              id="gigya-reset-password-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text"
+                       data-css-class="main-text" data-toolbox-item-type="label"
+                       data-wizard-base-translation-key="LABEL_31901611131936240">Please enter a new password:</label>
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     data-wizard-base-translation-key="PASSWORD_24487772290225964"><label class="gigya-label"
+                                                                                          for="gigya-password-newPassword"><span
+                        class="gigya-label-text">New password:</span><label class="gigya-required-display"
+                                                                            data-bound-to="newPassword">*</label></label><input
+                        type="password" name="newPassword" id="gigya-password-newPassword" class="gigya-input-password"
+                        tabindex="0" show-password-strength="left"
+                        gigya-conditional:show-password-strength="viewport.outerWidth < 900?up"
+                        show-valid-checkmark="true"><span class="gigya-error-msg" data-bound-to="newPassword"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     data-wizard-base-translation-key="PASSWORD_53816046531769560"><label class="gigya-label"
+                                                                                          for="gigya-password-passwordRetype"><span
+                        class="gigya-label-text">Confirm password:</span><label class="gigya-required-display"
+                                                                                data-bound-to="passwordRetype">*</label></label><input
+                        type="password" name="passwordRetype" id="gigya-passsord-passwordRetype"
+                        class="gigya-input-password" data-required="true" tabindex="0" show-valid-checkmark="true"><span
+                        class="gigya-error-msg" data-bound-to="passwordRetype"></span></div>
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     style="display: block;" data-wizard-base-translation-key="SUBMIT_48518527117736720"><input
+                        type="submit" class="gigya-input-submit" value="Submit" tabindex="0"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-reset-password-form" data-toolbox-item-type="formError"
+                     data-wizard-setting-width="">
+                    <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-reset-password-form"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+
+    <div id="gigya-reset-password-success-screen" data-caption="Reset Password" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:"
+         data-display-name="Reset Password Success">
+        <div class="gigya-layout-row ui-droppable ui-sortable"><label data-toolbox-item-type="label"
+                                                                      class="gigya-composite-control gigya-composite-control-label gigya-message main-text"
+                                                                      data-css-class="gigya-message main-text"
+                                                                      data-wizard-base-translation-key="LABEL_43754194743648540">Your
+            password has been changed successfully.<br>Log in with your new password.</label></div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <a class="gigya-composite-control gigya-composite-control-link gigya-button-link"
+               data-toolbox-item-type="link" data-switch-screen="gigya-login-screen" data-wizard-text-alignment="center"
+               style="text-align: center;" target="_blank" data-wizard-base-translation-key="LINK_122104312720648740">
+                <input tabindex="0" type="button" value="Back to Login">
+            </a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable"></div>
+        <div class="gigya-clear"></div>
+    </div>
+
+    <div id="gigya-password-change-required-screen" data-caption="Password Change" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <form class="gigya-profile-form" id="gigya-profile-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text"
+                       data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_16240548663414458">
+                    For security reasons, your password needs changing:
+                </label>
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     style="display: block;" data-wizard-base-translation-key="PASSWORD_101426512808638880">
+                    <label class="gigya-label" for="password">
+                        <span class="gigya-label-text">Current password:</span>
+                        <label class="gigya-required-display" data-bound-to="password">*</label>
+                    </label>
+                    <input type="password" name="password" id="gigya-password-password" class="gigya-input-password"
+                           tabindex="0" show-valid-checkmark="true">
+                    <span class="gigya-error-msg" data-bound-to="password"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     data-wizard-base-translation-key="PASSWORD_17036595420608126">
+                    <label class="gigya-label" for="gigya-password-newPassword">
+                        <span class="gigya-label-text">New password:</span>
+                        <label class="gigya-required-display" data-bound-to="newPassword">*</label>
+                    </label>
+                    <input type="password" name="newPassword" id="gigya-password-newPassword"
+                           class="gigya-input-password" tabindex="0" show-valid-checkmark="true"
+                           show-password-strength="left"
+                           gigya-conditional:show-password-strength="viewport.outerWidth < 900?up">
+                    <span class="gigya-error-msg" data-bound-to="newPassword"></span>
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-password" data-toolbox-item-type="password"
+                     style="display: block;" data-wizard-base-translation-key="PASSWORD_19612919353342308">
+                    <label class="gigya-label" for="gigya-password-passwordRetype">
+                        <span class="gigya-label-text">Confirm new password:</span>
+                        <label class="gigya-required-display" data-bound-to="passwordRetype">*</label>
+                    </label>
+                    <input type="password" name="passwordRetype" id="gigya-passsord-passwordRetype"
+                           class="gigya-input-password" data-required="true" tabindex="0" show-valid-checkmark="true">
+                    <span class="gigya-error-msg" data-bound-to="passwordRetype"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                 style="display: block;" data-wizard-base-translation-key="SUBMIT_65931489860940900">
+                <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+            </div>
+            <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                 data-bound-to="gigya-profile-form" data-toolbox-item-type="formError" data-wizard-setting-width="">
+                <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-profile-form">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+
+    <div id="gigya-verification-pending-screen" data-caption="Email Verification" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <form class="gigya-resend-verification-code-form" data-on-success-screen="gigya-verification-sent-screen"
+              id="gigya-resend-verification-code-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <label class="gigya-label-text gigya-composite-control gigya-composite-control-label"
+                       data-toolbox-item-type="label" style="display: block;"
+                       data-wizard-base-translation-key="LABEL_114745734160901840">
+                    For your security, a verification email has been sent to you. Please follow the instructions in the
+                    email to verify your account.<br><br>To resend the verification email, please enter your email
+                    address below and click Submit.
+                </label>
+                <div class="gigya-composite-control gigya-spacer" data-toolbox-item-type="spacer" data-units="1"
+                     style="height: 10px;">
+                </div>
+                <div class="gigya-composite-control gigya-composite-control-textbox" data-toolbox-item-type="textbox"
+                     style="display: block;" data-wizard-base-translation-key="TEXTBOX_53553186815043370">
+                    <label class="gigya-label" for="gigya-textbox-email">
+                        <span class="gigya-label-text">Email:</span>
+                        <label class="gigya-required-display" data-bound-to="email">*</label>
+                    </label>
+                    <input type="text" name="email" id="gigya-textbox-email" class="gigya-input-text"
+                           formnovalidate="formnovalidate" tabindex="0">
+                    <span class="gigya-error-msg" data-bound-to="email"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     style="display: block;" data-wizard-base-translation-key="SUBMIT_59040383411520670">
+                    <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-resend-verification-code-form" data-toolbox-item-type="formError"
+                     data-wizard-setting-width="">
+                    <div class="gigya-error-msg gigya-form-error-msg"
+                         data-bound-to="gigya-resend-verification-code-form">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-spacer" data-toolbox-item-type="spacer" data-units="8">
+                </div>
+                <label class="gigya-composite-control gigya-composite-control-label gigya-message"
+                       data-toolbox-item-type="label" style="display: block;" data-wizard-text-alignment="left"
+                       data-wizard-base-translation-key="LABEL_135099439990555600">
+                    <a data-switch-screen="gigya-login-screen">Log in with a different account</a>
+                </label>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-layout-cell ui-droppable ui-sortable">
+                        </div>
+                        <div class="gigya-clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-clear">
+                </div>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </form>
+    </div>
+
+    <div id="gigya-tfa-registration-screen" data-caption="Securing Your Account" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <div class="gigya-composite-control gigya-composite-control-tfa-widget gigya-composite-control-tfa-register"
+                 data-toolbox-item-type="tfa">
+                <div class="gigya-tfa">
+                    <param name="mode" value="register">
+                </div>
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+
+    <div id="gigya-tfa-verification-screen" data-caption="Verifying Your Account" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <div class="gigya-composite-control gigya-composite-control-tfa-widget gigya-composite-control-tfa-verify"
+                 data-toolbox-item-type="tfa">
+                <div class="gigya-tfa">
+                    <param name="mode" value="verify">
+                </div>
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+
+    <div id="gigya-verification-sent-screen" data-caption="Email Verification" data-width="auto"
+         class="gigya-screen v2 portrait"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:">
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <div class="gigya-composite-control gigya-spacer" data-toolbox-item-type="spacer" data-units="4">
+            </div>
+            <label class="gigya-label-text gigya-composite-control gigya-composite-control-label main-text"
+                   data-toolbox-item-type="label" data-wizard-base-translation-key="LABEL_4529849558267223">
+                A verification email with a link to verify your account has been sent to you.
+            </label>
+            <div class="gigya-composite-control gigya-spacer" data-toolbox-item-type="spacer" data-units="5">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link"
+               data-toolbox-item-type="link" data-switch-screen="_finish" data-wizard-text-alignment="center"
+               style="text-align: center;" data-wizard-base-translation-key="LINK_19224603862200704">
+                <input type="button" class="gigya-button" value="OK" tabindex="0">
+            </a>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-layout-cell ui-droppable ui-sortable">
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell">
+                <div class="gigya-layout-row">
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    </div>
+                    <div class="gigya-clear">
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear">
+            </div>
+        </div>
+        <div class="gigya-layout-row ui-droppable ui-sortable">
+        </div>
+        <div class="gigya-clear">
+        </div>
+    </div>
+
+    <div id="gigya-lite-account-progression-screen" data-caption="Complete Your Account" data-width="auto"
+         data-on-pending-verification-screen="gigya-verification-sent-screen"
+         class="gigya-screen v2 portrait gigya-composite-control-active"
+         gigya-conditional:class="viewport.outerWidth < 500 ?gigya-screen v2 portrait mobile:" style="display: block;">
+        <form class="gigya-lite-account-progression-form" id="gigya-lite-account-progression-form">
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-textbox gigya-composite-control-loginID"
+                     data-toolbox-item-type="loginID" data-wizard-base-translation-key="LOGINID_125523043931065060"
+                     style="">
+                    <input type="text" name="email" class="gigya-input-text" data-gigya-placeholder="Email"
+                           placeholder="Email *" show-valid-checkmark="true" disabled="disabled">
+                    <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                </div>
+            </div>
+            <h2 class="gigya-composite-control gigya-composite-control-header" data-toolbox-item-type="header"
+                data-wizard-base-translation-key="HEADER_51697213698355980">Provide a password:</h2>
+            <div id="password-row" class="gigya-layout-row with-two-inputs">
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    <div class="gigya-composite-control gigya-composite-control-password"
+                         data-toolbox-item-type="password"
+                         data-wizard-base-translation-key="PASSWORD_107891164873405600" style="">
+                        <input type="password" class="gigya-input-password" show-password-strength="up"
+                               gigya-conditional:show-password-strength="screenset.width < 900?up"
+                               id="gigya-password-107891164873405600" data-gigya-placeholder="Password"
+                               placeholder="Password" show-valid-checkmark="true" name="password">
+                        <span class="gigya-error-msg" data-bound-to="password"></span>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell ui-droppable ui-sortable">
+                    <div class="gigya-composite-control gigya-composite-control-password"
+                         data-toolbox-item-type="password"
+                         data-wizard-base-translation-key="PASSWORD_76732333762278900">
+                        <input type="password" class="gigya-input-password" show-password-strength="up"
+                               gigya-conditional:show-password-strength="screenset.width < 900?up"
+                               id="gigya-password-76732333762278900" data-gigya-placeholder="Confirm password"
+                               placeholder="Confirm password *" show-valid-checkmark="true" name="passwordRetype">
+                        <span class="gigya-error-msg" data-bound-to="passwordRetype"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-composite-control gigya-composite-control-checkbox" data-toolbox-item-type="checkbox"
+                 data-wizard-base-translation-key="CHECKBOX_78285840404140770" style="">
+                <input type="checkbox" class="gigya-input-checkbox" name="data.terms"
+                       id="gigya-checkbox-78285840404140770">
+                <label class="gigya-label" for="gigya-checkbox-78285840404140770">
+                    <span class="gigya-label-text gigya-checkbox-text">I have read and understood the <a
+                            class="gigya-terms-of-use" href="#">Terms of Use</a></span>
+                    <label class="gigya-required-display" data-bound-to="data.terms" style="display: none"
+                           for="gigya-checkbox-78285840404140770">*</label>
+                </label>
+            </div>
+            <div class="gigya-layout-row ui-droppable ui-sortable">
+                <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+                     style="display: block;" data-wizard-base-translation-key="SUBMIT_55211342470297420">
+                    <input type="submit" class="gigya-input-submit" value="Submit" tabindex="0">
+                </div>
+                <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error"
+                     data-bound-to="gigya-resend-verification-code-form" data-toolbox-item-type="formError"
+                     data-wizard-setting-width="">
+                    <div class="gigya-error-msg gigya-form-error-msg"
+                         data-bound-to="gigya-lite-account-progression-screen">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

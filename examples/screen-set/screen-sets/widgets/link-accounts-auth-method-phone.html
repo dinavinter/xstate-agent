@@ -1,0 +1,24 @@
+<div class="gigya-container gigya-visible-when" data-auth-method-render="phone">
+    <div class="gigya-composite-control gigya-composite-control-button gigya-auth-method gigya-link-account-auth-method" data-auth-method="phone" data-card-expanded="false">
+        <div class="gigya-card-container">
+            <div class="gigya-card-header" tabindex="0" role="button">
+                <div class="gigya-auth-method-icon-wrapper">
+                    <i class="gigya-auth-method-icon gigya-icon-mobile-auth"></i>
+                </div>
+                <div class="gigya-auth-method-text">
+                    <div class="gigya-auth-method-title" data-binding="true">Send Code with SMS</div>
+                    <div class="gigya-auth-method-label" data-binding="true">{{identifier.phone}}</div>
+                </div>
+            </div>
+            <div class="gigya-card-body">
+                <input type="text" name="phoneCode" class="gigya-input-text" data-required="true" autocomplete="off" tabindex="0" data-gigya-type="text" gigya-expression:data-gigya-placeholder="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_29852311458710910_VERIFICATION_INPUT']">
+                <div class="gigya-error-display" data-bound-to="phoneCode">
+                    <i class="gigya-error-icon"></i>
+                    <span class="gigya-error-msg" data-bound-to="phoneCode"></span>
+                </div>
+                <a class="gigya-otp-resend-button" data-binding="true" tabindex="0" role="button" data-translation-key="LINK_ACCOUNTS_AUTH_METHODS_29852311458710910_RESENDLINK" gigya-expression:data-countdown-label="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_29852311458710910_RESEND_CODE_COUNTER_LABEL']"></a>
+                <input type="button" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_29852311458710910_SUBMIT']">
+            </div>
+        </div>
+    </div>
+</div>

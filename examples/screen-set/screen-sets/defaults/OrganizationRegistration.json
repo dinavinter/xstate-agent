@@ -1,0 +1,27 @@
+{
+  "default":
+    {
+      "HEADER_106342818365243340_LABEL": "Contact Details",
+      "HEADER_50458598019520184_LABEL": "Company Details",
+      "GIGYA_ORG_REGISTER_SCREEN_CAPTION": "Register as a Partner",
+      "SUBMIT_137225100591190200_VALUE": "Submit",
+      "TEXTBOX_113360742895067570_LABEL": "State",
+      "TEXTBOX_133135708477460130_LABEL": "Email Address",
+      "TEXTBOX_149848673816334000_LABEL": "Zip Code",
+      "TEXTBOX_16663302892353186_LABEL": "Phone Number",
+      "TEXTBOX_26187629040220076_LABEL": "Country / Region",
+      "TEXTBOX_27312793853231424_LABEL": "Last Name",
+      "TEXTBOX_29921624267854000_LABEL": "First Name",
+      "TEXTBOX_32874987908090940_LABEL": "Department",
+      "TEXTBOX_45506320891300640_LABEL": "Job Description",
+      "TEXTBOX_57495145967237040_LABEL": "Address",
+      "TEXTBOX_62098234015860210_LABEL": "Company Name",
+      "TEXTBOX_89395508354381940_LABEL": "City",
+      "LABEL_77732593086657840_LABEL": "We have received your request to register as a partner. You'll receive an email once your request is approved.",
+      "LINK_106446799114025800_LABEL": "<input tabindex=\"0\" type=\"button\" value=\"OK\">",
+      "GIGYA_ORG_REGISTER_SUCCESS_SCREEN_CAPTION": "Request Received",
+      "GIGYA_CHANGE_ORGANIZATION_CONTEXT_SCREEN_CAPTION": "Change Organization Context",
+      "ORGANIZATION_CONTEXT_WIDGET_161455190710875900_SELECT_LABEL": "Select organization:",
+      "SUBMIT_107232010805799550_VALUE": "Select"
+    }
+}

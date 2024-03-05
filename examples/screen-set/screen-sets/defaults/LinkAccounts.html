@@ -1,0 +1,188 @@
+<div class="gigya-screen-set" id="Default-LinkAccounts" data-on-pending-registration-screen="Default-RegistrationLogin/gigya-complete-registration-screen" data-on-pending-verification-screen="Default-RegistrationLogin/gigya-email-verification-screen" data-on-pending-tfa-registration-screen="Default-RegistrationLogin/gigya-tfa-registration-screen" data-on-pending-tfa-verification-screen="Default-RegistrationLogin/gigya-tfa-verification-screen" data-on-pending-password-change-screen="Default-RegistrationLogin/gigya-password-change-required-screen" data-on-existing-login-identifier-screen="Default-LinkAccounts/gigya-link-account-screen" data-on-pending-recent-login-screen="Default-ReAuthentication/gigya-reauthentication-screen" data-on-accounts-linked-screen="_finish" data-width="" data-responsive="true" data-start-screen="gigya-link-account-screen" data-dialog-style="modern" data-wizard-migration-keys="migrate_translation_handlers_unique_key">
+    <div id="gigya-link-account-screen" data-width="auto" class="gigya-screen v2 gigya-link-account-screen portrait" gigya-conditional:class="viewport.width < 500? gigya-screen v2 gigya-link-account-screen portrait mobile: gigya-screen v2 gigya-link-account-screen portrait" gigya-expression:data-caption="screenset.translations['GIGYA_LINK_ACCOUNT_SCREEN_CAPTION']">
+        <form class="gigya-link-accounts-form" id="gigya-link-accounts-form">
+            <!-- social login -->
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell with-social-login responsive" style="width: 100%">
+                    <div class="gigya-container gigya-visible-when" data-login-identities="site-only"><h2 class="gigya-composite-control gigya-composite-control-header link-accounts-main-header" data-wizard-text-bold="bold" style="font-weight: bold; text-align: center;" data-translation-key="HEADER_66766754253798720_LABEL"></h2></div>
+                    <div class="gigya-container gigya-visible-when" data-login-identities="social"><h2 class="gigya-composite-control gigya-composite-control-header link-accounts-main-header" data-wizard-text-bold="bold" style="font-weight: bold; text-align: center;" data-translation-key="HEADER_88485663979193280_LABEL"></h2></div>
+                    <div class="gigya-container gigya-visible-when" data-login-identities="site-and-social"><h2 class="gigya-composite-control gigya-composite-control-header" data-translation-key="HEADER_52718613360185736_LABEL"></h2></div>
+                    <div class="gigya-container gigya-visible-when" data-login-identities="social-only"><h2 class="gigya-composite-control gigya-composite-control-header social-login-title" data-translation-key="HEADER_89162232959083470_LABEL"></h2></div>
+                    <div class="gigya-container gigya-visible-when" data-login-identities="social"><div class="gigya-composite-control gigya-composite-control-social-login">
+                        <div class="gigya-social-login">
+                            <param name="tabIndex" value="0"> <param name="version" value="2">
+                            <param name="width" value="420" gigya-conditional:value="screenset.width < 430?100%">
+                            <param name="height" value="50">
+                            <param name="enabledProviders" value="facebook,googleplus,twitter,linkedin,amazon,yahoo">
+                            <param name="buttonsStyle" value="fullLogoColored">
+                            <param name="buttonTheme" value="normal">
+                            <param name="pagingButtonStyle" value="newArrows" gigya-conditional:value="screenset.width < 430?auto:">
+                            <param name="buttonSize" value="45">
+                            <param name="columns" gigya-conditional:value="screenset.width < 430?2:">
+                            <param name="showWhatsThis" value="false"> <param name="showTermsLink" value="false">
+                            <param name="hideGigyaLink" value="true"> <param name="_pluginCenterFix" value="true">
+                            <param name="loginMode" value="link">
+                        </div>
+                    </div></div>
+                </div>
+            </div>
+            <!-- divider -->
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive" style="width: 100%">
+                    <div class="gigya-container gigya-visible-when" data-login-identities="site-and-social"><label class="gigya-composite-control gigya-composite-control-label label-divider" style="text-align: center" data-translation-key="LABEL_112643507797719220_LABEL"></label></div>
+                </div>
+            </div>
+            <!-- site login -->
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell with-site-login responsive">
+                    <div class="gigya-layout-row">
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site-and-social"><h2 class="gigya-composite-control gigya-composite-control-header" style="text-align: center;" data-translation-key="HEADER_119803489452460820_LABEL"></h2></div>
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site-only"><h2 class="gigya-composite-control gigya-composite-control-header" style="text-align: center;" data-translation-key="HEADER_145260704159400830_LABEL"></h2></div>
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site"><div class="gigya-composite-control gigya-composite-control-textbox">
+                            <input type="text" name="loginID" class="gigya-input-text" formnovalidate="formnovalidate" disabled="disabled" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_9521252200460624_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_9521252200460624_PLACEHOLDER']">
+                            <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                        </div></div>
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site"><div class="gigya-composite-control gigya-composite-control-password">
+                            <input type="password" name="password" class="gigya-input-password" gigya-expression:data-gigya-placeholder="screenset.translations['PASSWORD_112529999536342910_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['PASSWORD_112529999536342910_PLACEHOLDER']">
+                            <span class="gigya-error-msg" data-bound-to="password"></span>
+                        </div></div>
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site"><div class="gigya-composite-control gigya-composite-control-captcha-widget v1 gigya-v1">
+                            <div class="gigya-captcha-wrapper gigya-error-display" data-login-identities="site" data-error-flags="captchaNeeded" data-bound-to="gigya-link-accounts-form">
+                                <div class="gigya-captcha">
+                                    <param name="theme" value="white">
+                                    <param name="mode" value="visible">
+                                </div>
+                                <span class="gigya-error-msg" data-bound-to="captchaText"></span>
+                            </div>
+                        </div></div>
+                        <div class="gigya-container gigya-visible-when" data-login-identities="site"><div class="gigya-composite-control gigya-composite-control-submit">
+                            <input type="submit" class="gigya-input-submit" gigya-expression:value="screenset.translations['SUBMIT_36585504925953250_VALUE']">
+                        </div></div>
+                    </div>
+                    <!--form error -->
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-link-accounts-form">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-link-accounts-form"></div>
+                    </div>
+                    <div style="height: 10px;" data-units="10" class="gigya-composite-control gigya-spacer"></div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-container gigya-visible-when" data-login-identities="site"><a class="gigya-composite-control gigya-composite-control-link" data-switch-screen="gigya-forgot-password-screen" style="text-align: left;" data-translation-key="LINK_142602221192631200_LABEL"></a></div>
+                        </div>
+                        <div class="gigya-layout-cell">
+                            <div class="gigya-container gigya-visible-when" data-login-identities="site"><a class="gigya-composite-control gigya-composite-control-link" data-switch-screen="_skip" style="text-align: right;" data-translation-key="LINK_45513825813050510_LABEL"></a></div>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-row">
+                        <div class="gigya-container gigya-visible-when" data-login-identities="social-only"><a class="gigya-composite-control gigya-composite-control-link gigya-skip-link-account" data-switch-screen="_skip" style="text-align: center;" data-translation-key="LINK_9616838104955976_LABEL"></a></div>
+                    </div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="gigya-forgot-password-screen" data-width="auto" class="gigya-screen v2 gigya-forgot-password-screen portrait" gigya-conditional:class="viewport.width < 500? gigya-screen v2 gigya-forgot-password-screen portrait mobile" gigya-expression:data-caption="screenset.translations['GIGYA_FORGOT_PASSWORD_SCREEN_CAPTION']">
+        <form class="gigya-reset-password-form" data-on-success-screen="gigya-forgot-password-success-screen">
+            <div>
+                <label class="gigya-composite-control gigya-composite-control-label main-text letter-spacing-s" data-translation-key="LABEL_146159809074249440_LABEL"></label>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 10px;"></div>
+                <div class="gigya-composite-control gigya-composite-control-textbox email-wrapper" style="display: block;">
+                    <label class="gigya-label" for="gigya-textbox-loginID"><span class="gigya-label-text" data-translation-key="TEXTBOX_42422219216322590_LABEL"></span>
+                        <label class="gigya-required-display" data-bound-to="loginID">*</label>
+                    </label>
+                    <input type="text" name="loginID" id="gigya-textbox-loginID" class="gigya-input-text" formnovalidate="formnovalidate" gigya-expression:disabled="conflictingAccount &amp;&amp; conflictingAccount.conflictingAccount &amp;&amp; conflictingAccount.conflictingAccount.loginID">
+                    <span class="gigya-error-msg" data-bound-to="loginID"></span>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-composite-control gigya-composite-control-submit submit-wrapper">
+                    <input type="submit" class="gigya-input-submit" gigya-expression:value="screenset.translations['SUBMIT_46444294851811950_VALUE']">
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <a style="text-align: center;" class="gigya-composite-control gigya-composite-control-link" data-switch-screen="gigya-link-account-screen" data-translation-key="LINK_26804378547945756_LABEL"></a>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-layout-cell"></div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row ">
+                <div class="gigya-layout-cell ">
+                    <div class="gigya-layout-row ">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-layout-cell ">
+                    <div class="gigya-layout-row ">
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-layout-cell"></div>
+                        <div class="gigya-clear"></div>
+                    </div>
+                </div>
+                <div class="gigya-clear"></div>
+            </div>
+            <div class="gigya-layout-row"></div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+    <div data-width="auto" id="gigya-forgot-password-success-screen" class="gigya-screen v2 gigya-forgot-password-success-screen portrait" gigya-conditional:class="viewport.width < 500? gigya-screen v2 gigya-forgot-password-success-screen portrait mobile" gigya-expression:data-caption="screenset.translations['GIGYA_FORGOT_PASSWORD_SUCCESS_SCREEN_CAPTION']">
+        <div class="gigya-layout-row">
+            <div style="height: 20px;" data-units="4" class="gigya-composite-control gigya-spacer"></div>
+            <label class="gigya-composite-control gigya-composite-control-label main-text gigya-message" data-translation-key="LABEL_136017248495193460_LABEL"></label>
+            <div class="gigya-composite-control gigya-spacer" data-units="5" style="height: 25px;"></div>
+        </div>
+        <div class="gigya-layout-row button-row">
+            <div class="gigya-layout-row">
+                <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="gigya-link-account-screen" style="text-align: center;" data-translation-key="LINK_37583182803889800_LABEL"></a>
+            </div>
+        </div>
+        <div class="gigya-layout-row">
+            <div class="gigya-layout-cell ">
+                <div class="gigya-layout-row ">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell ">
+                <div class="gigya-layout-row ">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row"></div>
+        <div class="gigya-layout-row ">
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-layout-cell"></div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row ">
+            <div class="gigya-layout-cell ">
+                <div class="gigya-layout-row ">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-cell ">
+                <div class="gigya-layout-row ">
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-layout-cell"></div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </div>
+        <div class="gigya-layout-row"></div>
+        <div class="gigya-clear"></div>
+    </div>
+</div>
