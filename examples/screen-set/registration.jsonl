@@ -1,0 +1,174 @@
+MOBILE_MODAL_MIN_WIDTH
+:
+400
+POLL_INTERVAL
+:
+150
+addedCss
+:
+true
+config
+:
+{name: 'screenSet', namespace: 'accounts', methodName: 'showScreenSet', jsName: 'gigya.services.accounts.plugins.screenSet', publicMethods: {…}, …}
+container
+:
+div#gigya-modal-plugin-container-showScreenSet.gigya-screen-dialog-inner
+containerID
+:
+"gigya-modal-plugin-container-showScreenSet"
+data
+:
+n {params: {…}, apiData: {…}, lastSubmittedFormResponse: {…}, finalizeRegistrationNeeded: undefined, neededData: {…}, …}
+explicitParams
+:
+{screenSet: 'Default-RegistrationLogin', startScreen: 'gigya-register-screen', containerID: undefined, include: 'id_token', onFieldChanged: ƒ}
+hotKeyEvent
+:
+e {el: body, eventHandler: ƒ}
+injectionInfo
+:
+{name: 'screenSet', namespace: 'accounts', methodName: 'showScreenSet', jsName: 'gigya.services.accounts.plugins.screenSet', publicMethods: {…}}
+isMobileUI
+:
+false
+isModal
+:
+true
+isResponsive
+:
+true
+isRtl
+:
+false
+lang
+:
+"en"
+localizedJsName
+:
+"gigya.services.accounts.plugins.screenSet.js"
+onUserStateChange
+:
+ƒ (t)
+params
+:
+{screenSet: 'Default-RegistrationLogin', connectWithoutLoginBehavior: 'alwaysLogin', defaultRegScreenSet: 'Default-RegistrationLogin', defaultMobileRegScreenSet: 'Default-RegistrationLogin', sessionExpiration: 0, …}
+screenOptions
+:
+r {accountsLinkedScreen: undefined, pendingTfaRegistrationScreen: 'Default-RegistrationLogin/gigya-tfa-registration-screen', pendingTfaVerificationScreen: 'Default-RegistrationLogin/gigya-tfa-verification-screen', pendingRegistrationScreen: 'Default-RegistrationLogin/gigya-complete-registration-screen', existingLoginIdentifierScreen: 'Default-LinkAccounts/gigya-link-account-screen', …}
+templateElement
+:
+div#Default-RegistrationLogin.gigya-screen-set
+_ID
+:
+"Default-RegistrationLogin"
+_addedCSS
+:
+true
+_captionElement
+:
+div#gigya-screen-dialog-caption-gig_1709730530537_showScreenSet.gigya-screen-dialog-caption
+_css
+:
+{legacy_modal: '/* legacy modal */\n\ndiv.gigya-screen-dialog {\n    …: alpha(opacity=20);\n        opacity : 0.2;\n    }', modern_modal: '/*modern modal*/\n.gigya-style-modern #gigya-screen… body {\n    height: 0px;\n    overflow: hidden;\n}\n', defaultCSS: '.gigya-consent-title {\n  font-weight: bold;\n  disp…sition-y: 50%;\n  background-repeat: no-repeat;\n}\n'}
+_currentScreen
+:
+n {templateElement: div.gigya-screen.v2.landscape, _parent: E, eventHandlers: {…}, conditionalExpressions: Array(2), _screenSet: E, …}
+_elChildContainer
+:
+null
+_elContainer
+:
+div#gigya-modal-plugin-container-showScreenSet_content.gigya-screen-content.gigya-locale-en
+_errorDispatcher
+:
+{global: {…}, addMap: ƒ, dispatchErrorFromResponse: ƒ, dispatchInvalidParamError: ƒ, dispatchForWidget: ƒ, …}
+_eventDispatcher
+:
+ƒ (e,t)
+_eventWrappers
+:
+{onDisposed: e, onRefreshExternalComponentsEvent: e}
+_globalEventHandlers
+:
+{onLogin: Array(2), onLogout: Array(1)}
+_globalEventsManager
+:
+{_activeNamespaces: {…}, add: ƒ, remove: ƒ, dispatch: ƒ, dispatchWhenHandlerAdded: ƒ, …}
+_id
+:
+1
+_imgBase
+:
+"https://cdns.eu1.gigya.com/gs/i/"
+_imgExt
+:
+"png"
+_instanceId
+:
+"Default-RegistrationLogin_"
+_isChild
+:
+false
+_isDisposed
+:
+false
+_loadingIndicator
+:
+e {_container: div#gigya-modal-plugin-container-showScreenSet.gigya-screen-dialog-inner, _isActive: false, _dimmer: div.gigya-screen-dimmer, _loader: div.gigya-screen-loader}
+_logger
+:
+t {_global: Window, _groupsStack: Array(0), _currColorIdx: 0, configKey: 'gig_loggerConfig', _console: console, …}
+_modalDialog
+:
+n {params: {…}, explicitParams: {…}, _logger: t, _errorDispatcher: {…}, _eventDispatcher: ƒ, …}
+_nextScreen
+:
+null
+_originalCustomLang
+:
+{}
+_pixelRatio
+:
+2
+_placeholderIntervalID
+:
+-1
+_poller
+:
+e {_intervalID: 10, _actions: Array(2), _logger: ƒ}
+_random
+:
+0.9700981413937799
+_screenSet
+:
+E {params: {…}, explicitParams: {…}, _logger: t, _errorDispatcher: {…}, _eventDispatcher: ƒ, …}
+_screens
+:
+{gigya-login-screen: n, gigya-register-screen: n, gigya-complete-registration-screen: n, gigya-mobile-login-screen: n, gigya-mobile-verification-screen: n, …}
+_startScreen
+:
+"gigya-register-screen"
+_style
+:
+3
+_templates
+:
+{legacyModal: '<div id="gigya-screen-dialog-page-overlay" style="…gya-screen-dialog-close"></div>\n    </div>\n</div>', modal: '<div id="gigya-screen-dialog-page-overlay" style="…gigya-screen-dialog-inner">\r\n    </div>\r\n</div>\r\n', modalCloseButton: '<img src="${imgUrl}" alt="close" height="${imgHeight}" width="${imgWidth}" />\n', passwordStrength: '<div class="${scoreClass}" aria-atomic="true" aria-live="polite">${content}</div>\n', passwordStrength_strengthMeter: '<div class="gigya-passwordStrength-text">\n    <spa… <div class="${barIndicatorClass}"></div>\n</div>\n', …}
+activeGroups
+:
+(...)
+hasProviderSessionInfo
+:
+(...)
+isLinkAccountsV2InProgress
+:
+(...)
+providerSessionInfo
+:
+(...)
+regToken
+:
+(...)
+shouldFinalizeLinkAccountsV2AfterRedirect
+:
+(...)

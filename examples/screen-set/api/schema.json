@@ -1,0 +1,258 @@
+{
+  "$ref": "#/$defs/ScreenSet",
+  "id": "screen-set",
+  "$defs": {
+    "ScreenSet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the screen-set."
+        },
+        "css": {
+          "type": "string",
+          "description": "CSS style to apply"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "stylesheet reference to include"
+          }
+        },
+        "data-responsive": {
+          "type": "boolean",
+          "description": "Enables responsive design for the screen-set."
+        },
+        "data-width": {
+          "type": "number",
+          "description": "Defines the width of the screen-set when presented in a dialog."
+        },
+        "data-height": {
+          "type": "number",
+          "description": "Defines the height of the screen-set when presented in a dialog."
+        },
+        "data-start-screen": {
+          "type": "string",
+          "description": "Specifies the initial screen to display within the screen-set."
+        },
+        "data-dialog-style": {
+          "type": "string",
+          "description": "Style of the dialog when the screen-set is presented in a dialog.",
+          "enum": [
+            "none",
+            "classic",
+            "modern",
+            "legacy"
+          ]
+        },
+        "screens": {
+          "items": {
+            "$ref": "#/$defs/Screen"
+          }
+        }
+      }
+    },
+    "Screen": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the screen"
+        },
+        "forms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FormTemplate"
+          }
+        },
+        "data-next-screen": {
+          "type": "string",
+          "description": "Specifies the next screen to display upon completion of the current screen."
+        },
+        "data-on-accounts-linked-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display upon completion of account linking."
+        },
+        "data-on-pending-tfa-registration-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending TFA registration is triggered during registration or login."
+        },
+        "data-on-pending-registration-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending registration is triggered during registration or login."
+        },
+        "data-on-existing-login-identifier-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a conflicting login identifier is detected during social login."
+        },
+        "data-on-pending-verification-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending verification is triggered during registration or login."
+        },
+        "data-on-pending-tfa-verification-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending TFA is triggered during registration or login."
+        },
+        "data-on-pending-email-verification-code": {
+          "type": "string",
+          "description": "Specifies the screen to display when a  code is sent to the user's email for verification."
+        },
+        "data-on-missing-loginid-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a password required during password-less registration ( social login, otp ,fido, etc)."
+        },
+        "data-on-pending-password-change-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending password change is triggered."
+        },
+        "data-on-pending-recent-login-screen": {
+          "type": "string",
+          "description": "Specifies the screen to display when a pending recent login is triggered."
+        }
+      }
+    },
+    "FormTemplate": {
+      "type": "object",
+      "x-metadata": {
+        "classes": {
+          "gigya-form-error": "a CSS class that is applied to the form when an error occurs."
+        }
+      },
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A brief description of the form."
+        },
+        "behavior": {
+          "description": "The behavior of the form.",
+          "$ref": "#/$defs/Behavior"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ContainerTemplate"
+          }
+        },
+        "data-on-success-screen": {
+          "type": "string",
+          "description": "Defines which screen to switch in case of successful submission and processing of the form. If not specified, after successful processing of the form, the flow finishes and SAP Customer Data Cloud hides the screen-set (see also Removing the Screen-Set section)."
+        },
+        "data-auto-skip": {
+          "type": "boolean",
+          "description": "A boolean attribute with a default value \"false\". When the value is set to \"true\" and all the required fields in the form have data (from the database), the form is automatically skipped and behaves as if it was successfully submitted and processed. SAP Customer Data Cloud loads the data-on-success-screen if defined, or finishes the flow and hides the screen-set. The data-auto-skip logic also takes into consideration the data-empty-fields settings, so a screen may not be skipped if it has a container that has missing required fields and passes all other defined conditions (so the container is visible)."
+        },
+        "data-on-auto-skip-screen": {
+          "type": "string",
+          "description": "When specified, this attribute overrides the data-on-success next screen attribute and allows specifying a different next screen when the form is successfully submitted vs. when the screen is auto-skipped. If this attribute is not specified, then the next screen for both cases is determined by the data-on-success attribute."
+        },
+        "data-on-screenset-skipped-screen": {
+          "type": "string",
+          "description": "Indicates the next screen to display when a screen in a different screen-set was skipped, returning control to the current screen-set."
+        },
+        "data-on-missing-loginid-screen": {
+          "type": "string",
+          "description": "Indicates the next screen to display when the user is missing a login identity."
+        }
+      },
+      "required": [
+        "behavior",
+        "children"
+      ]
+    },
+    "ContainerTemplate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string",
+          "description": "html tag"
+        },
+        "innerHtml": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Condition"
+          }
+        }
+      },
+      "description": "Represents a container that can have multiple conditional visibility rules."
+    },
+    "Condition": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/ConditionType"
+        },
+        "value": {
+          "$ref": "#/$defs/ConditionValue"
+        }
+      },
+      "description": "A single conditional rule for a container."
+    },
+    "ConditionType": {
+      "type": "string",
+      "enum": [
+        "data-condition",
+        "data-domains",
+        "data-apikeys",
+        "data-prob",
+        "data-after-date",
+        "data-before-date",
+        "data-empty-fields",
+        "data-login-identities"
+      ],
+      "description": "The type of condition that can be applied to a container."
+    },
+    "ConditionValue": {
+      "type": "object",
+      "properties": {
+        "rule": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "The value of a condition, including the rule as a JavaScript expression and optional parameters."
+    },
+    "ConditionParam": {
+      "type": "string",
+      "enum": [
+        "data-on-render"
+      ],
+      "description": "Specific parameters that can modify the behavior of a condition."
+    },
+    "Behavior": {
+      "type": "string",
+      "enum": [
+        "gigya-login-form",
+        "gigya-register-form",
+        "gigya-complete-registration-form",
+        "gigya-mobile-login-form",
+        "gigya-mobile-login-verification",
+        "gigya-forgot-password-form",
+        "gigya-forgot-password-success-form",
+        "gigya-reset-password-form",
+        "gigya-reset-password-success-form",
+        "gigya-password-change-required-form",
+        "gigya-verification-pending-form",
+        "gigya-tfa-registration-form",
+        "gigya-tfa-verification-form",
+        "gigya-verification-sent-form",
+        "gigya-update-profile-form",
+        "gigya-tfa-edit-form",
+        "gigya-change-password-form",
+        "gigya-otp-send-code-form",
+        "gigya-otp-update-form",
+        "gigya-tfa-form"
+      ]
+    }
+  }
+}

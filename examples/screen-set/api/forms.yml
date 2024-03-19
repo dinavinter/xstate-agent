@@ -1,0 +1,102 @@
+gigya-register-form:
+  description: A form that allows users to register for a new account.
+  x-fields:
+    loginID:
+      type: string
+      description: The user's login identifier.
+    password:
+      type: string
+      description: The user's password.
+    passwordRetype:
+      type: string
+      description: The user's password, re-typed.
+
+gigya-login-form:
+  description: Represents a login form, where the user is expected to enter his credentials for identification.
+  properties:
+    loginID:
+      type: string
+      description: The user's login identifier.
+    password:
+      type: string
+      description: The user's password.
+    captchaText:
+      type: string
+      description: The user's CAPTCHA text.
+    remember:
+      type: boolean
+      description: Whether the user checked the "Remember me" checkbox.
+gigya-reauthentication-form:
+  description: Represents an account authentication form, where the user is expected to prove ownership of an account by logging in.
+  properties:
+    loginID:
+      type: string
+      description: The user's login identifier.
+    availableProviders:
+      type: string
+      description: The user's available providers.
+
+gigya-passwordless-login-form:
+  description: Represents a passwordless login form, where the user is expected to enter his credentials for identification.
+  properties:
+    identifier:
+      selector: input[data-identifier-type]
+      description: The user's identifier.
+      properties:
+        data-identifier-type:
+          type: string
+          description: The user's identifier type.
+
+
+
+gigya-push-auth-method-form:
+  description: The available data attributes for data-condition properties
+  properties:
+    authMethods:
+      type: array
+      description: The user's available authentication methods.
+      items:
+        type: string
+        description: The user's available authentication method.
+        enum:
+          - passkeyLogin
+          - passkeyRegister
+          - password
+          - push
+          - emailOtp
+          - magicLink
+gigya-otp-send-code-form:
+  description: Represents a form where the user is expected to enter his phone number for verification.
+  x-default-screen: Default-RegistrationLogin/gigya-mobile-login-screen
+  x-behavior: [ send-code ]
+  properties:
+    phoneNumber:
+      type: string
+      description: The user's phone number.
+    email:
+      type: string
+      description: The user's email address
+gigya-otp-login-form:
+  description: Represents a form where the user is expected to enter the code sent to his phone for verification.
+  x-default-screen: Default-RegistrationLogin/gigya-otp-login-form
+  x-behavior: [ login, registration ]
+  properties:
+    code:
+      type: string
+      description: The user's verification code.
+gigya-mobile-verification-screen:
+  description: Represents a form where the user is expected to enter the code sent to his phone for verification.
+  x-default-screen: Default-RegistrationLogin/gigya-mobile-verification-screen
+  properties:
+    code:
+      type: string
+      description: The user's verification code.
+gigya-otp-update-form:
+  description: Represents a form where the user is expected to enter the code sent to his email for verification of a new email.
+  x-default-screen: Default-RegistrationLogin/gigya-email-code-verification-screen
+  x-behavior: [ update-email, update-phone ]
+  properties:
+    code:
+      type: string
+      description: The user's verification code. 
+                         

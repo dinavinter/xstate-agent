@@ -1,0 +1,69 @@
+<div class="gigya-screen-set" id="Default-LiteRegistration" data-responsive="true" data-dialog-style="modern" data-wizard-migration-keys="migrate_translation_handlers_unique_key">
+    <div class="gigya-screen v2 portrait" data-width="auto" id="gigya-subscribe-with-email-screen" gigya-conditional:class="viewport.width < 500 ? gigya-composite-control-active gigya-screen v2 portrait mobile : gigya-composite-control-active gigya-screen v2 portrait" gigya-expression:data-caption="screenset.translations['GIGYA_SUBSCRIBE_WITH_EMAIL_SCREEN_CAPTION']">
+        <form class="gigya-subscribe-with-email-form" data-on-success-screen="gigya-subscribe-thank-you-screen" id="gigya-subscribe-with-email-form">
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-row">
+                    <h2 class="gigya-composite-control-header gigya-conditional gigya-header" data-wizard-text-bold="bold" data-translation-key="HEADER_115341122219738720_LABEL"></h2>
+                </div>
+                <div class="gigya-layout-row">
+                    <div class="gigya-composite-control gigya-spacer gigya-spacer-divider" data-units="1" style="height: 1px;"></div>
+                </div>
+                <div class="gigya-layout-row with-two-inputs">
+                    <div class="gigya-layout-cell">
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="text" aria-label="First name" class="gigya-input-text" name="profile.firstName" show-valid-checkmark="true" formnovalidate="formnovalidate" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_40161500768779070_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_40161500768779070_PLACEHOLDER']">
+                            <span class="gigya-error-msg" data-bound-to="profile.firstName"></span>
+                        </div>
+                    </div>
+                    <div class="gigya-layout-cell">
+                        <div class="gigya-composite-control gigya-composite-control-textbox" style="display: block;">
+                            <input type="text" aria-label="Last name" class="gigya-input-text" name="profile.lastName" show-valid-checkmark="true" tabindex="0" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_9112499838793728_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_9112499838793728_PLACEHOLDER']">
+                            <span class="gigya-error-msg" data-bound-to="profile.lastName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gigya-layout-row">
+                    <div class="gigya-composite-control gigya-composite-control-textbox">
+                        <input type="text" name="email" id="gigya-textbox-email" class="gigya-input-text" formnovalidate="formnovalidate" tabindex="0" data-required="true" gigya-expression:data-gigya-placeholder="screenset.translations['TEXTBOX_11732118875291136_PLACEHOLDER']" gigya-expression:aria-label="screenset.translations['TEXTBOX_11732118875291136_PLACEHOLDER']">
+                        <span class="gigya-error-msg" data-bound-to="profile.email"></span>
+                    </div>
+                </div>
+                <div class="gigya-layout-row">
+                    <div class="gigya-composite-control gigya-composite-control-checkbox">
+                        <input type="checkbox" class="gigya-input-checkbox" name="" id="gigya-checkbox-subscription" checked="checked" tabindex="0">
+                        <label class="gigya-label" for="gigya-checkbox-subscription">
+                            <span class="gigya-label-text gigya-checkbox-text" data-translation-key="CHECKBOX_23747318366892016_LABEL"></span>
+                            <label class="gigya-required-display" data-bound-to="" style="display: none">*</label></label>
+                    </div>
+                </div>
+                <div class="gigya-layout-row">
+                    <div class="gigya-composite-control" data-translation-key="LABEL_10782287025984824_LABEL"></div>
+                </div>
+                <div class="gigya-layout-row">
+                    <div class="gigya-composite-control gigya-composite-control-submit">
+                        <input type="submit" class="gigya-input-submit" tabindex="0" gigya-expression:value="screenset.translations['SUBMIT_8528365233759930_VALUE']">
+                    </div>
+                    <div class="gigya-clear"></div>
+                </div>
+            </div>
+            <div class="gigya-layout-row">
+                <div class="gigya-layout-cell responsive">
+                    <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-subscribe-with-email-form">
+                        <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-subscribe-with-email-form"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gigya-clear"></div>
+        </form>
+    </div>
+    <div class="gigya-screen v2 portrait" data-width="auto" id="gigya-subscribe-thank-you-screen" gigya-conditional:class="viewport.width < 500 ? gigya-composite-control-active gigya-screen v2 portrait mobile : gigya-composite-control-active gigya-screen v2 portrait" gigya-expression:data-caption="screenset.translations['GIGYA_SUBSCRIBE_THANK_YOU_SCREEN_CAPTION']">
+        <div class="gigya-layout-row">
+            <div class="subscribe-thank-you" data-translation-key="LABEL_108445338318504780_LABEL"></div>
+            <div class="gigya-composite-control gigya-spacer" data-units="1" style="height: 1px;"></div>
+        </div>
+        <div class="gigya-layout-row">
+            <a tabindex="-1" class="gigya-composite-control gigya-composite-control-link gigya-button-link" data-switch-screen="_finish" style="text-align: center;" data-translation-key="LINK_27881194033483156_LABEL"></a>
+        </div>
+        <div class="gigya-clear"></div>
+    </div>
+</div>

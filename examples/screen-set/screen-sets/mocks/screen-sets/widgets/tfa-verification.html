@@ -1,0 +1,105 @@
+<div class="gigya-composite-control gigya-composite-control-tfa-verification-widget">
+            <div class="gigya-tfa-verification-widget-header"><h2 class="gigya-tfa-verification-title"
+                                                                  data-binding="true"
+                                                                  data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_HEADER_LABEL"></h2>
+                <p class="gigya-tfa-verification-description" data-binding="true"
+                   data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_HEADER_DESCRIPTION"></p></div>
+            <div class="gigya-tfa-verification-widget-body"><span class="gigya-empty-list"
+                                                                  data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMPTY_STATE_LABEL"></span>
+                <!-- Phone -->
+                <div class="gigya-tfa-verification-method tfa-phone-method" data-tfa-method="phone">
+                    <div class="gigya-tfa-verification-method-header" data-binding="true"
+                         data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_METHOD_LABEL"></div>
+                    <ul class="gigya-card-list gigya-tfa-verification-devices">
+                        <template>
+                            <li class="gigya-tfa-verification-device gigya-card" data-device-expanded="true"
+                                data-gigya-template="true" data-screen-set-data-path="tfaProviders.phones"
+                                data-binding-prefix="tfa">
+                                <div class="gigya-tfa-verification-device-header"><i
+                                        class="gigya-tfa-method-icon gigya-icon-mobile-tfa"
+                                        data-show-method-icon="true"></i>
+                                    <div class="gigya-tfa-verification-device-label" data-binding="true"
+                                         data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_DEVICE_LABEL"></div>
+                                    <button class="gigya-tfa-verification-action-btn" title="send code"
+                                            type="button" aria-label="Send Code"
+                                            data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_ACTION_LABEL"></button>
+                                </div>
+                                <div class="gigya-tfa-verification-device-body">
+                                    <div class="gigya-info-message-strip" data-show-message-strip="true"><i
+                                            class="gigya-info-message-strip-icon"></i>
+                                        <div class="gigya-info-message-strip-text" data-binding="true"
+                                             data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_METHOD_MESSAGE_STRIP_LABEL"></div>
+                                    </div>
+                                    <div class="gigya-tfa-verification-device-body-content">
+                                        <input
+                                            data-binding="true" type="text" name="phoneCode"
+                                            class="gigya-input-text" data-required="true" autocomplete="off"
+                                            tabindex="0" data-gigya-type="text" data-array-root=""
+                                            placeholder="Enter Code"
+                                            aria-label="Enter code for phone ending with %lastSymbols"
+                                            gigya-expression:data-gigya-placeholder="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_PLACEHOLDER_FOR_INPUT']">
+                                        <span class="gigya-error-msg" data-bound-to="phoneCode"></span>
+                                        <a data-binding="true" class="gigya-tfa-resend-code" tabindex="0"
+                                           role="button"
+                                           gigya-expression:data-countdown-label="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_RESEND_CODE_COUNTDOWN_LABEL']"
+                                           data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_RESEND_CODE_LABEL"></a>
+                                        <input type="button" class="gigya-input-submit" tabindex="0"
+                                               data-array-root="" name="tfaVerificationWidget"
+                                               gigya-expression:value="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_PHONE_SUBMIT_BUTTON']">
+                                        <span class="gigya-error-msg" data-bound-to="tfaVerificationWidget"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <!-- Email -->
+                <div class="gigya-tfa-verification-method tfa-email-method" data-tfa-method="email">
+                    <div class="gigya-tfa-verification-method-header" data-binding="true"
+                         data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_METHOD_LABEL"></div>
+                    <ul class="gigya-card-list gigya-tfa-verification-devices">
+                        <template>
+                            <li class="gigya-tfa-verification-device gigya-card" data-gigya-template="true"
+                                data-screen-set-data-path="tfaProviders.emails" data-binding-prefix="tfa"
+                                data-device-expanded="false">
+                                <div class="gigya-tfa-verification-device-header"><i
+                                        class="gigya-tfa-method-icon gigya-icon-email-tfa"
+                                        data-show-method-icon="true"></i>
+                                    <div class="gigya-tfa-verification-device-label" data-binding="true"
+                                         data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_DEVICE_LABEL"></div>
+                                    <button class="gigya-tfa-verification-action-btn" title="send code"
+                                            type="button" aria-label="Send Code"
+                                            data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_ACTION_LABEL"></button>
+                                </div>
+                                <div class="gigya-tfa-verification-device-body">
+                                    <div class="gigya-info-message-strip" data-show-message-strip="true"><i
+                                            class="gigya-info-message-strip-icon"></i>
+                                        <div class="gigya-info-message-strip-text" data-binding="true"
+                                             data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_METHOD_MESSAGE_STRIP_LABEL"></div>
+                                    </div>
+                                    <div class="gigya-tfa-verification-device-body-content">
+                                        <input
+                                            data-binding="true" type="text" name="emailCode"
+                                            aria-label="Enter code for email ending with %lastSymbols"
+                                            class="gigya-input-text" data-required="true" autocomplete="off"
+                                            tabindex="0" data-gigya-type="text" data-array-root=""
+                                            placeholder="Enter Code"
+                                            gigya-expression:data-gigya-placeholder="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_PLACEHOLDER_FOR_INPUT']">
+                                        <span class="gigya-error-msg" data-bound-to="emailCode"></span>
+                                        <a data-binding="true" class="gigya-tfa-resend-code" tabindex="0"
+                                           role="button"
+                                           gigya-expression:data-countdown-label="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_RESEND_CODE_COUNTDOWN_LABEL']"
+                                           data-translation-key="TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_RESEND_CODE_LABEL"></a>
+                                        <input type="button" class="gigya-input-submit" tabindex="0"
+                                               data-array-root="" name="tfaVerificationWidget"
+                                               gigya-expression:value="screenset.translations['TFA_VERIFICATION_WIDGET_159230567113127420_EMAIL_SUBMIT_BUTTON']">
+                                        <span class="gigya-error-msg" data-bound-to="tfaVerificationWidget"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+

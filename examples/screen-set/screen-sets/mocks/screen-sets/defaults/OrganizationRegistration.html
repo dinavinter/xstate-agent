@@ -1,0 +1,50 @@
+<div class="gigya-screen-set" id="Default-OrganizationRegistration" data-responsive="true" data-dialog-style="modern" data-wizard-migration-keys="migrate_translation_handlers_unique_key migrate_translation_handlers_unique_key_v3">
+  <div
+          id="gigya-change-organization-context-screen"
+          class="gigya-screen v2 portrait gigya-composite-control-active"
+          data-width="auto"
+          data-caption="Change Organization Context"
+          data-display-name="Change Organization Context"
+          style="display: none;"
+          gigya-conditional:class="viewport.width < 500 ? gigya-composite-control-active gigya-screen v2 portrait mobile : gigya-composite-control-active gigya-screen v2 portrait"
+  >
+    <form
+            class="gigya-change-organization-context-form"
+            id="gigya-change-organization-context-form"
+    >
+      <div class="gigya-layout-row ui-droppable ui-sortable">
+        <div class="gigya-composite-control gigya-composite-control-fieldset gigya-organization-context-widget gigya-composite-control-active"
+             data-toolbox-item-type="organization-context-widget"
+             draggable="false">
+          <fieldset class="gigya-fieldset gigya-organization-context-fieldset">
+            <div class="gigya-organization-context-label-wrapper" data-wizard-base-translation-key="ORGANIZATION_CONTEXT_WIDGET_161455190710875900_SELECT_LABEL">
+              <label class="gigya-label">
+                <span class="gigya-label-text gigya-organization-context-label-text">Select organization:</span>
+              </label>
+            </div>
+            <select class="gigya-organization-context-dropdown" id="organizationContextSelect" name="organizationContextSelect" tabindex="0">
+              <option class="gigya-organization-context-dropdown-options">{{organization.name}} - {{organization.bpid}}</option>
+            </select>
+          </fieldset>
+          <div class="gigya-info hidden">
+            <div class="gigya-row gigya-info-label"></div>
+          </div>
+          <div class="gigya-error-display">
+            <span class="gigya-error-msg"></span>
+          </div>
+        </div>
+
+      </div>
+      <div class="gigya-layout-row ui-droppable ui-sortable">
+        <div class="gigya-composite-control gigya-composite-control-submit" data-toolbox-item-type="submit"
+             data-wizard-base-translation-key="SUBMIT_107232010805799550">
+          <input type="submit" class="gigya-input-submit" value="Select" data-gigya-type="submit">
+        </div>
+        <div class="gigya-error-display gigya-composite-control gigya-composite-control-form-error" data-bound-to="gigya-org-register-form" data-toolbox-item-type="formError" data-wizard-setting-width="">
+          <div class="gigya-error-msg gigya-form-error-msg" data-bound-to="gigya-org-register-form"></div>
+        </div>
+      </div>
+      <div class="gigya-clear"></div>
+    </form>
+  </div>
+</div>

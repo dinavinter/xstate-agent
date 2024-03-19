@@ -1,0 +1,15 @@
+{
+    "default": {
+        "CHECKBOX_23747318366892016_LABEL": "Weekly Newsletter",
+        "HEADER_115341122219738720_LABEL": "Sign up for our newsletter",
+        "LABEL_10782287025984824_LABEL": "<label class=\"gigya-label-text\">By subscribing I agree to the <a class=\"gigya-terms-of-use\" href=\"#\">Terms of Use</a></label>",
+        "GIGYA_SUBSCRIBE_WITH_EMAIL_SCREEN_CAPTION": "Subscribe with email",
+        "SUBMIT_8528365233759930_VALUE": "Sign up",
+        "TEXTBOX_11732118875291136_PLACEHOLDER": "Email",
+        "TEXTBOX_40161500768779070_PLACEHOLDER": "First name",
+        "TEXTBOX_9112499838793728_PLACEHOLDER": "Last name",
+        "LABEL_108445338318504780_LABEL": "<p>Thank you for subscribing!</p>\n <p>We'll be in touch.</p>",
+        "LINK_27881194033483156_LABEL": "<input type=\"button\" class=\"gigya-button\" value=\"OK\" tabindex=\"0\">",
+        "GIGYA_SUBSCRIBE_THANK_YOU_SCREEN_CAPTION": "Thank you"
+    }
+}

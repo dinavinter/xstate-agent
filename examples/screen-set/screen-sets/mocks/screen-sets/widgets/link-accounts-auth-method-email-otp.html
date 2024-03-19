@@ -1,0 +1,30 @@
+<div class="gigya-container gigya-visible-when" data-auth-method-render="emailOtp">
+    <div class="gigya-composite-control gigya-composite-control-button gigya-auth-method gigya-link-account-auth-method"
+         data-auth-method="emailOtp" data-card-expanded="false">
+        <div class="gigya-card-container">
+            <div class="gigya-card-header" tabindex="0" role="button">
+                <div class="gigya-auth-method-icon-wrapper">
+                    <i class="gigya-auth-method-icon gigya-icon-email-auth"></i>
+                </div>
+                <div class="gigya-auth-method-text">
+                    <div class="gigya-auth-method-title" data-binding="true">Send Code with Email (OTP)</div>
+                    <div class="gigya-auth-method-label" data-binding="true">{{identifier.email}}</div>
+                </div>
+            </div>
+            <div class="gigya-card-body">
+                <input type="text" name="emailCode" class="gigya-input-text" data-required="true" autocomplete="off"
+                       tabindex="0" data-gigya-type="text"
+                       gigya-expression:data-gigya-placeholder="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_1528521569552822_VERIFICATION_INPUT']">
+                <div class="gigya-error-display" data-bound-to="emailCode">
+                    <i class="gigya-error-icon"></i>
+                    <span class="gigya-error-msg" data-bound-to="emailCode"></span>
+                </div>
+                <a class="gigya-otp-resend-button" data-binding="true" tabindex="0" role="button"
+                   data-translation-key="LINK_ACCOUNTS_AUTH_METHODS_1528521569552822_RESENDLINK"
+                   gigya-expression:data-countdown-label="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_1528521569552822_RESEND_CODE_COUNTER_LABEL']"></a>
+                <input type="button" class="gigya-input-submit" tabindex="0"
+                       gigya-expression:value="screenset.translations['LINK_ACCOUNTS_AUTH_METHODS_1528521569552822_SUBMIT']">
+            </div>
+        </div>
+    </div>
+</div>

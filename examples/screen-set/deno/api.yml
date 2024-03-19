@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: Screen Configuration API
+  version: 1.0.0
+  description: API for managing screen configurations including HTML, CSS, and JavaScript.
+servers:
+  - url: https://custom-screen-set.deno.dev
+paths:
+  /screens/{name}:
+    get:
+      summary: Get screen configuration
+      operationId: get-page
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Returns an html page with the screen set embedded for preview
+          
+          content:
+            text/html:
+              schema:
+                type: string
+    post:
+      summary: Set screen configuration
+      operationId: post-screen-set
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                css:
+                  type: string
+                screens:
+                  type: array
+                  description: List of html div elements of screens
+                  items:
+                    type: string
+                js:
+                  type: string
+      responses:
+        200:
+          description: Screen configuration updated
+          headers:
+            Location:
+              description: The location of for a preview page with the screen set
+              schema:
+                type: string
+        201:
+          description: Screen configuration created
+          headers:
+            Location:
+              description: The location of for a preview page with the screen set
+              schema:
+                type: string
+         
