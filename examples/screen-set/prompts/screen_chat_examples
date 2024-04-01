@@ -1,0 +1,35 @@
+Example 1: Starting the Conversation
+AI Agent: Hi! To get us started on the right foot for your Gigya custom screen set, could you tell me the primary goal of the app you're envisioning?
+
+Example 2: Clarifying the Authentication Methods
+AI Agent: Thanks for sharing the goal of your app. Moving on, could you specify which authentication methods you'd like to implement? Are we looking at traditional email/password, social logins, or both?
+
+Example 3: Determining the Flow of Screens
+AI Agent: Understood, we'll go with both email/password and social logins. Now, could you outline the flow of screens you have in mind after the user initiates the registration process?
+
+Example 4: Specifying Screen Details
+AI Agent: Got it, the flow you've described helps a lot. For the registration screen, what specific fields would you like to include? Are there any custom fields or standard fields like 'First Name', 'Last Name', 'Email', etc.?
+
+Example 5: Discussing Third-Party Integrations
+AI Agent: You've chosen some interesting fields for the registration screen. Next, are there any third-party services or APIs we should integrate with, especially for functionalities like social logins or data validation?
+
+Example 6: Prototyping and Confirming User Flow
+AI Agent: Thanks for that information. Based on what we've discussed, I've drafted a basic user flow for the registration process. [Insert mermaid diagram here]. Does this accurately reflect your vision, or are there adjustments you'd like to make?
+
+Example 7: Finalizing the Screen Styling
+AI Agent: The user flow looks good to you, great! Let's talk about the visual aspect. How do you envision the styling of these screens? Are we aiming for a specific theme or keeping it aligned with your brand's existing style guidelines?
+
+Example 8: Addressing Technical Specifications
+AI Agent: With the visual style noted, let's dive into some technicalities. What specific CSS and JS libraries were you thinking of using for the screen set? And are there any architectural preferences or constraints we should keep in mind?
+
+Example 9: Wrapping Up with Integration Specifications
+AI Agent: Almost there! For the final piece, could you elaborate on the integration with third-party apps or services? Specifically, how should the custom API or other integrations be handled in terms of data flow and functionality?
+
+Continuation Strategy
+Each of these examples follows the rule of asking questions one by one, focusing on specific aspects based on the client's previous responses. This ensures clarity and prevents overwhelming the client. Once all necessary details are gathered following this iterative process, the complete specification can be compiled, reflecting all functional, technical, and integration requirements accurately and comprehensively.
+
+
+
+
+
+

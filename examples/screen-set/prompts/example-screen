@@ -1,0 +1,71 @@
+
+ Project Title: Custom Gigya Screen Sets
+ 
+
+Functional Specification
+Trigger screen sets when the user interacts with the corresponding buttons on the website
+The following screen sets are included in the flow:
+Registration screen
+Login screen
+Link Accounts screen
+Data Collection screen
+Profile Update screen (for checkout)
+Registration, Login, Link Accounts, and Data Collection screens should be displayed as popups
+Profile Update screen should include fields for Billing Address, Shipping Address, and Payment Method
+No specific validation or formatting requirements for the fields
+Clean and modern design approach for the screen sets
+Technical Specification
+Use Bootstrap for CSS
+Use jQuery for JS
+Implement the screens using JavaScript
+Make the screen sets mobile responsive
+Integration Specification
+Integrate the Gigya API for launching the screen sets
+Users can log in using their existing Gigya account or create a new account
+User's information will be collected and stored in the Gigya database
+Integrate the Payment Request API for collecting payment information during checkout
+Integrate Stripe for processing payments. For development, mock data will be used for the Stripe API keys.
+BDDs
+Given a user interacts with the corresponding buttons on the website
+When the user clicks the button
+Then trigger the corresponding screen set
+Given the Profile Update screen
+When the user enters their information and proceeds to checkout
+Then collect payment information using the Payment Request API and process the payment using Stripe
+
+-------
+######
+Project Title: Event Registration Screen Set
+
+Overall: The client wants to implement a Gigya custom screen set for their event management website, focused on a seamless user registration experience and collecting attendee information on sessions of interest. The screen set will involve the following screens: Registration screen and a Welcome message. The overall styling should utilize the Bulma CSS framework, and the screens should be implemented as Web Components using native JavaScript.
+
+Functional Specification
+The screen set should be triggered when the user clicks the "Register" button on the website.
+The screen set will involve the following screens:
+Registration screen
+Welcome message
+The Registration screen should have the following fields:
+Name
+Email
+Sessions of Interest
+The overall styling should be clean and modern, utilizing the Bulma CSS framework.
+The Registration screen should be triggered when the user clicks the "Register" button on the website.
+The Welcome message should be displayed after the user successfully submits the Registration screen.
+Technical Specification
+The screen set should use the Bulma CSS library for styling.
+The screen set should use native JavaScript for functionality, and the screens should be implemented as Web Components.
+The screen set should be mobile responsive.
+Integration Specification
+The Gigya API should be used for launching the screen set. The screen set will handle the Gigya integration APIs and logic.
+The user will be required to register using a passwordless method.
+The user's information will be collected and stored in the Gigya database.
+BDDs
+When a user clicks on register button
+Then the registration screen should be triggered
+When the user successfully submits the Registration screen
+Then the Welcome message should be displayed
+Given a registration screen has been triggered
+The input elements should include Name, Email, Sessions of Interest
+Bulma CSS should be applied to the screen.
+
+

@@ -1,0 +1,116 @@
+[{
+  "name": "screen-set-overview",
+  "description": "The complete spec for create a screen set",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string",
+        "description": "overall description and goals for the screen set and the app it will be integrated with"
+      }
+    }
+  },
+    "required": [
+        "title",
+        "description"
+    ]
+},
+  {
+    "name": "screen-set-flow",
+    "description": "The flow of the user interaction with the different screens",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "flow": {
+          "type": "string",
+          "description": "the flow of the user interaction with the different screens"
+        }
+      },
+      "required": [
+        "flow"
+      ]
+    }
+  },
+  {
+    "name": "screen-set-functional-specification",
+    "description": "How the screen should be triggered, which screens should be involved in the flow, what fields should be present in each screen, any specific requirements for each field (eg. validation, formatting, etc), overall styling guidelines, popup style or embedded style, enumerate all the parts of the screen flow (eg. registration, login, link accounts, data collection, etc.); for each part, explain *in detail* how it should work from the perspective of the user and when should it be triggered, identify any constraints, business rules, user flows or other important info that affect how the application should integrate with the screen callback",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "functional_specification": {
+          "type": "string",
+          "description": "how the screen should be triggered, which screens should be involved in the flow, what fields should be present in each screen, any specific requirements for each field (eg. validation, formatting, etc), overall styling guidelines, popup style or embedded style, enumerate all the parts of the screen flow (eg. registration, login, link accounts, data collection, etc.); for each part, explain *in detail* how it should work from the perspective of the user and when should it be triggered, identify any constraints, business rules, user flows or other important info that affect how the application should integrate with the screen callback"
+        }
+      },
+      "required": [
+        "functional_specification"
+      ]
+    }
+  },
+  {
+    "name": "screen-set-technical-specification",
+    "description": "What css and js libraries should be used, the architecture of the screens (what js functions should be included, mobile, background tasks, integration with 3rd party services, etc), any specific requirements for the integration with gigya",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "technical_specification": {
+          "type": "string",
+          "description": "what css and js libraries should be used, the architecture of the screens (what js functions should be included, mobile, background tasks, integration with 3rd party services, etc), any specific requirements for the integration with gigya"
+        }
+      },
+      "required": [
+        "technical_specification"
+      ]
+    }
+  },
+    {
+        "name": "screen-set-integration-specification",
+        "description": "How the screen set should integrate with the app, what gigya apis should be used, what data should be collected and stored in the gigya database, etc",
+        "parameters": {
+        "type": "object",
+        "properties": {
+            "integration_specification": {
+            "type": "string",
+            "description": "how the screen set should integrate with the app, what gigya apis should be used, what data should be collected and stored in the gigya database, etc"
+            }
+        },
+        "required": [
+            "integration_specification"
+        ]
+        }
+    },
+    {
+        "name": "screen-set-bdd",
+        "description": "Behaviour driven development tests",
+        "parameters": {
+        "type": "object",
+        "properties": {
+            "bdd": {
+            "type": "array",
+            "description": "behaviour driven development tests",
+            "items": {
+                "type": "object",
+                "properties": {
+                "given": {
+                    "type": "string"
+                },
+                "when": {
+                    "type": "string"
+                },
+                "then": {
+                    "type": "string"
+                }
+                }
+            }
+            }
+        },
+        "required": [
+            "bdd"
+        ]
+        }
+    }
+]
+     
