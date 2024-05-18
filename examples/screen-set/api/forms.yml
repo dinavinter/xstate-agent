@@ -1,6 +1,6 @@
 gigya-register-form:
-  description: A form that allows users to register for a new account.
-  x-fields:
+  description: Represents a registration with a password form, where the user is expected to specify his credentials and potentially additional information.
+  properties:
     loginID:
       type: string
       description: The user's login identifier.
@@ -47,9 +47,15 @@ gigya-passwordless-login-form:
           type: string
           description: The user's identifier type.
 
-
-
-gigya-push-auth-method-form:
+gigya-change-email-screen:
+        description: Represents an email change form, where the user is expected to update his email address.
+        properties:
+          email:
+            type: string
+            description: The user's new email address.
+        
+        
+gigya-auth-methods-screen:
   description: The available data attributes for data-condition properties
   properties:
     authMethods:
@@ -65,6 +71,12 @@ gigya-push-auth-method-form:
           - push
           - emailOtp
           - magicLink
+gigya-push-auth-method-form:
+    description: Represents a push authentication method form, where the user is expected to approve a push notification for authentication.
+    properties:
+      pushAuth:
+        type: string
+        description: The user's push authentication.
 gigya-otp-send-code-form:
   description: Represents a form where the user is expected to enter his phone number for verification.
   x-default-screen: Default-RegistrationLogin/gigya-mobile-login-screen
